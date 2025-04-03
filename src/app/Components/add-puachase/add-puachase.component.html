@@ -1,0 +1,70 @@
+<form [formGroup]="purchaseForm">
+    <div class="purchase-container">
+      <h2>Purchase</h2>
+      <div class="form-group">
+        <label>Search by Name/Phone</label>
+        <input pInputText formControlName="search" placeholder="Search by Name/Phone" />
+        <input pInputText formControlName="phone" placeholder="Phone No." />
+      </div>
+      
+      <div class="form-group">
+        <label>Bill Number</label>
+        <input pInputText formControlName="billNumber" />
+        <label>Bill Date</label>
+        <p-calendar formControlName="billDate"></p-calendar>
+        <label>State of Supply</label>
+        <p-dropdown [options]="states" formControlName="state"></p-dropdown>
+      </div>
+      
+      <p-table [value]="purchaseItems" editMode="cell" >
+        <ng-template pTemplate="header">
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit</th>
+            <th>Price/Unit</th>
+            <th>Discount</th>
+            <th>Tax</th>
+            <th>Amount</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item let-i="rowIndex">
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td><input pInputText [(ngModel)]="item.name" /></td>
+            <td><input pInputText [(ngModel)]="item.description" /></td>
+            <td><input pInputText [(ngModel)]="item.qty" type="number" /></td>
+            <td>
+              <p-dropdown [options]="units" [(ngModel)]="item.unit"></p-dropdown>
+            </td>
+            <td><input pInputText [(ngModel)]="item.price" type="number" /></td>
+            <td><input pInputText [(ngModel)]="item.discount" type="number" /></td>
+            <td>
+              <p-dropdown [options]="taxOptions" [(ngModel)]="item.tax"></p-dropdown>
+            </td>
+            <td>{{ calculateAmount(item) }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+      
+      <button pButton type="button" label="Add Row" (click)="addRow()"> Add Row</button>
+      
+      <div class="form-group">
+        <label>Payment Type</label>
+        <p-dropdown [options]="paymentTypes" formControlName="paymentType"></p-dropdown>
+      </div>
+      
+      <div class="total-section">
+        <label>Round Off</label>
+        <input pInputText formControlName="roundOff" type="number" />
+        <label>Total</label>
+        <input pInputText formControlName="total" readonly />
+      </div>
+      
+      <button pButton type="submit" label="Save">Save</button>
+    </div>
+  </form>
+  
+

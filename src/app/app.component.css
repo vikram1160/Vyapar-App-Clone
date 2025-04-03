@@ -1,0 +1,89 @@
+  .nav a {
+    color: white !important;
+    font-weight: bold; 
+  }
+  .dropdown-menu a:hover {
+    background-color: rgb(39, 34, 53) !important;
+    color: white !important;
+  }
+
+  .dropdown-menu a{
+    background-color: rgb(250, 250, 250) !important;
+    color: rgb(0, 0, 0) !important;
+     font-weight: bold; 
+     height: 300vh;
+  }
+
+  .navbar{
+    width: 78vw;
+    margin-left: 20vw;
+  }
+
+  /* .nav{
+    margin-top:56px;
+  } */
+  .home{
+    background-color: rgb(244, 177, 177);
+    border-radius: 30px;
+    color: red;
+    margin-left:50px
+  }
+
+  .Purchase{
+    background-color: rgb(167, 204, 235);
+    border-radius: 30px;
+    color: rgb(8, 108, 240);
+    margin-left: 50vw;
+  
+  }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+mat-drawer-container {
+  height: 100vh;
+  overflow: hidden !important;
+  
+}
+.mat-drawer-inner-container {
+  width: 100%;
+  height: 100%;
+  overflow:hidden !important;
+}
+
+.mat-drawer-inner-container
+
+.content-wrapper {
+  height: 100vh;
+  overflow:hidden !important;
+}
+
+ /* app-sadinav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+} */
+
+  /* mat-drawer {
+    height: 600vh !important;
+  }
+  app-sadinav {
+    height: 600vh !important; 
+} */
+
+  /* @media screen and (max-width: 1000px) {
+    .navbar {
+      width: 100%; 
+    }
+
+  }
+  @media screen and (min-width: 400px) {
+    .navbar {
+      width: 400px; 
+    }
+  } */
+  
+  
+  

@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="profile-card">
+    <div class="logo-upload">
+      <label for="logoUpload" class="logo-circle">Add Logo</label>
+      <input type="file" id="logoUpload" hidden>
+    </div>
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSave()">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Business Details</h4>
+          <div class="form-group">
+            <label>Business Name*</label>
+            <input type="text" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label>GSTIN</label>
+            <input type="text" class="form-control" >
+          </div>
+          <div class="form-group">
+            <label>Email ID</label>
+            <input type="email" class="form-control" >
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h4>More Details</h4>
+          <div class="form-group">
+            <label>Business Type</label>
+            <select class="form-control" formControlName="businessType">
+              <option value="">Select Business Type</option>
+              <option value="Retail">Retail</option>
+              <option value="Wholesale">Wholesale</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Business Category</label>
+            <select class="form-control" formControlName="businessCategory">
+              <option value="Mobile & Accessories">Mobile & Accessories</option>
+              <option value="Electronics">Electronics</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>State</label>
+            <select class="form-control" formControlName="state">
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Gujarat">Gujarat</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Pincode</label>
+            <input type="text" class="form-control" formControlName="pincode">
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Address -->
+      <div class="form-group">
+        <label>Business Address</label>
+        <textarea class="form-control" formControlName="businessAddress"></textarea>
+      </div>
+
+      <!-- Signature Upload -->
+      <div class="form-group">
+        <label>Add Signature</label>
+        <input type="file" class="form-control-file" (change)="onFileSelected($event)">
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-buttons">
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>

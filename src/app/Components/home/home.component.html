@@ -1,0 +1,36 @@
+<div class="dashboard-container" onload="loadpage()">
+    <div class="summary">
+      <div class="card receivable">
+        <h4>Total Receivable</h4>
+        <h2>₹ 996</h2>
+        <p>From 1 Party</p>
+        <i class="pi pi-arrow-down  arrow"></i>
+      </div>
+      <div class="card payable">
+        <h4>Total Payable</h4>
+        <h2>₹ 9,995</h2>
+        <p>From 1 Party</p>
+        <i class="pi pi-arrow-up arrow"></i>
+      </div>
+    </div>
+  
+    <div class="sales">
+      <h4>Total Sale</h4>
+      <h2>₹ 1000</h2>
+      <p-chart type="line" [data]="data" [options]="options" style="height: 300px;"></p-chart>
+
+    </div>
+  
+    <div class="reports">
+      <h4>Most Used Reports</h4>
+      <div class="report-list dispaly-flex">
+        <button pButton label="Sale Report" icon="pi pi-chevron-right">Sale Report</button>
+        <button pButton label="All Transactions" icon="pi pi-chevron-right">All Transactions</button>
+        <button pButton label="Daybook Report" icon="pi pi-chevron-right">Daybook Report</button>
+        <button pButton label="Party Statement" icon="pi pi-chevron-right">Party Statement</button>
+      </div>
+    </div>
+  </div>
+  
+
+

@@ -1,7 +1,143 @@
-<h3>Welcome to Angular 18 with PrimeNG!</h3>
-<p-button label="Click Me" (onClick)="click()" ></p-button>
-<input type="text" pInputText placeholder="Enter your name" />
-<!-- <i class="pi pi-check" style="font-size: 2rem; color: green;"></i> -->
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="ms-auto">
+      <a class="btn btn-danger me-3" routerLink="home"><i class="pi pi-plus"></i> Add Sale</a>
+      <a class="btn btn-primary me-5" routerLink=""><i class="pi pi-plus"></i> Add Purchase</a>
+    </div>
+  </div>
+</nav> -->
+
+<!-- <nav class="nav flex-column border border-dark" style="width: 250px; height: 100%; background-color: rgb(39, 34, 53); ">
+  <a class="nav-link active" routerLink=""> <i class="pi pi-home" style="font-size: 1rem"></i> Home </a>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" routerLink="party-details" role="button" data-bs-toggle="dropdown" >
+      <i class="pi pi-users" style="font-size: 1rem"></i> Parties
+    </a>
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" routerLink="party-details">Party Details <span style="margin-left: 100px;"><i class="pi pi-plus" style="font-size: 0.8rem"></i> </span> </a></li>
+      <li><a class="dropdown-item" routerLink="smart-connect">Smart Connect</a></li>
+    </ul>
+  </li>
+  
+  <li class="nav-item ">
+    <a class="nav-link " routerLink="iteam" role="button">
+      <i class="pi pi-shopping-bag"  style="font-size: 1rem"></i> Items
+      <span style="margin-left: 123px;"><i class="pi pi-plus" style="font-size: 0.8rem"></i> </span> </a> 
+      
+  </li>
+
+  <li class="nav-item dropdown dropdown-menu-dark">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" >
+      <i class="pi pi-th-large" style="font-size: 1rem"></i> Sale
+    </a>
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" routerLink="#">Sale Invoices </a></li>
+      <li><a class="dropdown-item" routerLink="#">Estimate / Quotation</a></li>
+      <li><a class="dropdown-item" routerLink="#">Payment In</a></li>
+      <li><a class="dropdown-item" routerLink="#">Sale Order</a></li>
+      <li><a class="dropdown-item" routerLink="#">Delivery Challan</a></li>
+      <li><a class="dropdown-item" routerLink="#">Sale Return / Credit Note</a></li>
+      <li><a class="dropdown-item" routerLink="#">Vyapar POS</a></li>
 
 
-<router-outlet />
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" >
+      <i class="pi pi-shopping-cart" style="font-size: 1rem"></i> Purchase & Expense
+    </a>
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" routerLink="#">Purchase Bills</a></li>
+      <li><a class="dropdown-item" routerLink="#">Payment Out</a></li>
+      <li><a class="dropdown-item" routerLink="#">Expenses</a></li>
+      <li><a class="dropdown-item" routerLink="#">Purchase Order</a></li>
+      <li><a class="dropdown-item" routerLink="#">Purchase Return / Dr note</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" >
+      <i class="pi pi-chart-line" style="font-size: 1rem"></i> Grow Your Business
+    </a>
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" routerLink="#">Whatsapp Marketing</a></li>
+      <li><a class="dropdown-item" routerLink="#">Online Stor</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" >
+      <i class="pi pi-building-columns" style="font-size: 1rem"></i> Cash & Bank
+    </a>
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" routerLink="#">Bank Accounts</a></li>
+      <li><a class="dropdown-item" routerLink="#">Cash In Hand</a></li>
+      <li><a class="dropdown-item" routerLink="#">Chequse</a></li>
+      <li><a class="dropdown-item" routerLink="#">Loan Account</a></li>
+      
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link " role="button" >
+      <i class="pi pi-chart-bar" style="font-size: 1rem"></i> Reports
+    </a>
+  </li>
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" >
+      <i class="pi pi-sync" style="font-size: 1rem"></i> Sync Share & Backup
+    </a>
+    <ul class="dropdown-menu" >
+      <li><a class="dropdown-item" routerLink="#">Sync & Share</a></li>
+      <li><a class="dropdown-item" routerLink="#">Auto Backup</a></li>
+      <li><a class="dropdown-item" routerLink="#">Backup To Computer</a></li>
+      <li><a class="dropdown-item" routerLink="#">Backup To Drive</a></li>
+      <li><a class="dropdown-item" routerLink="#">Restore Backup</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link " role="button" routerLink="#"   >
+      <i class="pi pi-cog" style="font-size: 1rem"></i> Setting
+    </a>
+  </li>
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link  " role="button" data-bs-toggle="dropdown" >
+      <i class="bi bi-award" style="font-size: 1.2rem"></i> Plans & Pricing
+    </a>
+  </li>
+
+  <br>
+  <br>
+  <br>
+  <li class="nav-item dropdown ">
+    <a class="nav-link " role="button"  routerLink="#"  >
+      <i class="pi pi-user" style="font-size: 1rem"></i> Profile  <span style="margin-left: 120px;"><i class="pi pi-plus" style="font-size: 0.8rem"></i> </span>
+    </a>
+  </li>
+  
+</nav> -->
+
+<mat-drawer-container>
+  <mat-drawer mode="side" opened="true">
+    <app-sadinav></app-sadinav>
+  </mat-drawer>
+
+  
+  <mat-drawer-content>
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+
+

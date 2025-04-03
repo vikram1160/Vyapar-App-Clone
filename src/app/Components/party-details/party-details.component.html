@@ -1,0 +1,48 @@
+<div class="party-details">
+    <div class="row">
+        <div class="col-3 add-party">
+            <i class="pi pi-search"></i><button   routerLink='/add-party' class="add-party-btn">Add Party</button>   <i  class="pi pi-ellipsis-v"></i>          
+        </div>
+        <div class="col-9">
+            <div class="row ADMIN-ROW">
+              <div class="col-8">
+                <label >Phone : <span routerLink='/add-party' >  <i class="pi pi-phone"></i>   Add Phone No</span> </label> <br>
+                <label >Email : <span routerLink='/add-party' > <i class="pi pi-envelope"></i>   Add Email ID</span> </label> <br>
+                <label >No Credit Limit Set : <span routerLink='/add-party'> Set Credit Limit </span> </label>
+                
+              </div>
+              <div class="col-4">
+                <label >Address : <span routerLink='/add-party'>  Add Address</span> </label> <br>
+                <label >GstIn : <span routerLink='/add-party'>  Add GSTIN</span> </label> <br>
+                <label >Party Status : <span>  Add</span>  </label> <br> 
+              </div>
+            </div>
+            <div class="row TRANSACATIONS-ROW">
+                TRANSACATIONS  
+    
+                <div class="card">
+                    <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+                        <ng-template #header>
+                            <tr>
+                                <th>Type</th>
+                                <th>Number</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Balance</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template #body let-product>
+                            <tr>
+                                <td>{{ product.type }}</td>
+                                <td>{{ product.number }}</td>
+                                <td>{{ product.date }}</td>
+                                <td>{{ product.total }}</td>
+                                <td>{{ product.balance }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

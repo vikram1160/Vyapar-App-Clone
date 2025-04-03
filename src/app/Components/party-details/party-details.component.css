@@ -1,0 +1,45 @@
+.row{
+    margin-top: 10px;
+    margin-left: 10px;
+    /* border: 1px solid black; */
+}
+.TRANSACATIONS-ROW{
+    margin-top:50px; 
+    margin-left: 20px;
+}
+.add-party{
+    border: 1px solid black;
+    height: 470px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.add-party-btn{
+    margin-top: 14px;
+    margin-left: 66px;
+    border-radius: 50px;
+}
+.add-party-btn:hover{
+    background-color:lightblue
+}
+.pi-ellipsis-v{
+margin-left: 30px;
+}
+.pi-search{
+    margin-left: 10px;
+}
+i{
+    cursor: pointer;
+}
+label  {
+    cursor: pointer;
+    
+}
+label:hover{
+    background-color: #ebecec;
+}
+
+/* .party-details{
+    overflow-x: hidden;
+    background-color: lightgray;
+} */
