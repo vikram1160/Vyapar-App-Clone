@@ -1,0 +1,39 @@
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color:  rgb(39, 34, 53);
+    color: white;
+    padding: 15px 0;
+  }
+  
+  .nav-link {
+    color: #cfd1d3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: #1e2130;
+    color: white;
+  }
+  
+  .submenu {
+    list-style: none;
+    padding-left: 30px;
+    margin: 0;
+  }
+  
+  .submenu li .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    color: #ccc;
+  }
+  
+  .submenu li .nav-link:hover {
+    color: #fff;
+  }
+  

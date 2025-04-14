@@ -1,0 +1,96 @@
+h3{
+    margin-left: 0px;
+    margin-top: 50px;
+    text-align: center;
+}
+h5{
+    margin-left: 0px;
+    margin-top: 7px;
+    text-align: center;
+}
+.roww{
+    display: flex;
+    margin-top: 30px !important;
+    margin: 0px 10px 0px;
+    justify-content: center;
+}
+.col-3{
+    
+    text-align: center;
+    margin: 0px px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    width: 280px;
+    height: 150px;
+
+}
+button{
+    box-shadow: 10px 4px 15px 10px rgba(0, 0, 0, 0.1);
+   width: 180px;
+   height: 40px; 
+   border: none;
+   border-radius: 10px;
+   background-color: rgb(235, 46, 46);
+   color: white;
+  
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+button:hover{
+    background-color: royalblue;
+    border-radius: 40px;
+}
+input{
+    width: 200px;
+    margin-left: 0px;
+}
+.bank-row{
+   margin-left: 450px;
+   margin-top: -40px;
+}
+.one{ 
+    height: 200px;
+    width: 500px;
+    /* background-color: rgb(194, 201, 201); */
+    margin-right: 500px;
+    background-color: white;
+    box-shadow: 10px 4px 15px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 301px;
+    margin-top: 40px;
+}
+.ac{
+    margin: 14px;
+    border-radius: 10px;
+
+
+}
+.save-change{
+    margin-left: 590px;
+    margin-top: 10px;
+}
+.header{
+    margin-left:-70px;
+}
+::ng-deep .top-center-dialog {
+    position: fixed !important;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
+  ::ng-deep .p-dialog {
+    margin-left: 250px; /* Match your sidebar width */
+    z-index: 1055; /* Ensure it appears above sidebar but below modals if needed */
+  }
+  input{
+    margin: 0px 10px;
+  }
+  
+  

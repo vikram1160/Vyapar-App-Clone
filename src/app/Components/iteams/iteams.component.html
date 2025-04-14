@@ -1,1 +1,85 @@
-<p>iteams works!</p>
+<div class="btnn" >
+
+    <button class="btn">PRODUCTS </button>
+    <button class="btn">SERVICES</button>
+    <button class="btn">CATEGORY</button>
+    <button class="btn">UNITS</button>
+    
+</div>
+
+
+<div class="party-details">
+    <div class="row">
+        <div class="col-3 add-party">
+            <i class="pi pi-search"></i><button  routerLink='/add-party' class="add-party-btn">Add Party</button>    <i class="pi pi-ellipsis-v" (click)="showDialog()"  tooltipPosition="right"></i>
+            <p-dialog [closable]="false" class="dialog"  [(visible)]="visible" [style]="{ width: '13rem' }">
+                <div class="row row-dial">
+                
+               <span (click)="visible = false">Bulk Inactive</span>
+               <span (click)="visible = false">Bulk Active</span>
+               <span (click)="visible = false">Bulk Assings Code </span>
+               <span (click)="visible = false">Assings Unit </span>
+                </div>
+            </p-dialog>       
+            
+            <div class="main">
+                <div class="PARTY">
+                   ITEM <br> <br>
+                   
+                   Mouse <br>  <br>
+                  
+                   keyboard
+                </div>
+                <div class="AMOUNT">
+                    QUANTITY <br>   <br>
+                   
+                    8 <br> <br>
+                    
+                    5
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="row ADMIN-ROW">
+              <div class="col-8">
+              <i class="pi pi-send "></i> <br>
+                <label >SALE PRICE:₹ 0.00 (excl)   </label> <br>
+                <label >PURCHASE PRICE:  ₹ 0.00 (excl) </label> <br>
+                
+              </div>
+              <div class="col-4">
+                <label >STOCK QUANTITY :  -9</label> <br>
+                <label >STOCK VALUE : ₹ 0.00 </label> <br>
+              </div>
+            </div>
+            <div class="row TRANSACATIONS-ROW"> 
+                <div class="row">
+                    TRANSACATIONS   <input  type="text" placeholder="Search"/>  
+                </div>
+    
+                <div class="card">
+                    <p-table [value]="products" [tableStyle]="{ 'min-width': '40rem' }" >
+                        <ng-template #header>
+                            <tr>
+                                <th>Type</th>
+                                <th>Number</th>
+                                <th>Date</th>
+                                <th>Total</th>
+                                <th>Balance</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template #body let-product>
+                            <tr>
+                                <td>{{ product.type }}</td>
+                                <td>{{ product.number }}</td>
+                                <td>{{ product.date }}</td>
+                                <td>{{ product.total }}</td>
+                                <td>{{ product.balance }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

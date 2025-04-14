@@ -1,0 +1,42 @@
+<!-- <div class="sidebar">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link" (click)="toggleMenu('reports')">
+          <i class="bi bi-bar-chart-fill me-2"></i>Reports
+          <i class="bi bi-chevron-down ms-auto" *ngIf="openMenu === 'reports'"></i>
+          <i class="bi bi-chevron-right ms-auto" *ngIf="openMenu !== 'reports'"></i>
+        </a>
+        <ul *ngIf="openMenu === 'reports'" class="submenu">
+          <li><a class="nav-link" routerLink="add-sale">Sale</a></li>
+          <li><a class="nav-link" routerLink="/reports/purchase">Purchase</a></li>
+          <li><a class="nav-link" routerLink="/reports/daybook">Day Book</a></li>
+          <li><a class="nav-link" routerLink="/reports/cashflow">Cash Flow</a></li>
+        </ul>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" (click)="toggleMenu('utilities')">
+          <i class="bi bi-tools me-2"></i>Utilities
+          <i class="bi bi-chevron-down ms-auto" *ngIf="openMenu === 'utilities'"></i>
+          <i class="bi bi-chevron-right ms-auto" *ngIf="openMenu !== 'utilities'"></i>
+        </a>
+        <ul *ngIf="openMenu === 'utilities'" class="submenu">
+          <li><a class="nav-link" routerLink="/utilities/backup">Backup</a></li>
+          <li><a class="nav-link" routerLink="/utilities/restore">Restore</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div> -->
+  <div class="sidebar">
+    <ul class="nav flex-column">    
+          <li><a class="nav-link" routerLink="reports/sale">Sale</a></li>
+          <li><a class="nav-link" routerLink="/reports/purchase">Purchase</a></li>
+          <li><a class="nav-link" routerLink="/reports/daybook">Day Book</a></li>
+          <li><a class="nav-link" routerLink="/reports/cashflow">All Transactions</a></li>         
+          <li><a class="nav-link" routerLink="/utilities/backup">Profit All Loss </a></li>
+          <li><a class="nav-link" routerLink="/utilities/restore">Bill Wise Profit</a></li>
+          <li><a class="nav-link" routerLink="/utilities/restore">Cash Flow</a></li>
+        </ul>
+  </div>
+  <router-outlet></router-outlet>
+  

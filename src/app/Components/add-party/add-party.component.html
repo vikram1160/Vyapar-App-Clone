@@ -1,1 +1,83 @@
-<p>add-party works!</p>
+<div class="row">
+     <!-- Party Name -->
+     <div class="col-4 md:col-4">
+        <label for="partyName">Party Name *</label>
+        <input id="partyName" type="text" pInputText placeholder="PartyName" />
+      </div>
+
+      <!-- GSTIN -->
+      <div class="col-4 md:col-4">
+        <label for="gstin">GSTIN</label>
+        <input id="gstin" type="text" pInputText placeholder="gstin" />
+      </div>
+
+      <!-- Phone Number -->
+      <div class="col-4 md:col-4">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="text" pInputText placeholder="phone" />
+      </div>
+</div>
+
+
+<p-tabView>
+    <p-tabPanel header="GST & Address">
+      <form [formGroup]="partyForm">
+        <div class="p-fluid grid">  
+          <!-- GST Type -->
+          <div class="col-12 md:col-4">
+            <label for="gstType">GST Type</label>
+            <p-dropdown [options]="gstTypes" formControlName="gstType" placeholder="Select GST Type"></p-dropdown>
+          </div>
+  
+          <!-- State -->
+          <div class="col-12 md:col-4">
+            <label for="state">State</label>
+            <p-dropdown [options]="states" formControlName="state" placeholder="Select State"></p-dropdown>
+          </div>
+  
+          <!-- Email -->
+          <div class="col-12 md:col-4">
+            <label for="email">Email ID</label>
+            <input id="email" type="email" pInputText formControlName="email" />
+          </div>
+  
+          <!-- Billing Address -->
+          <div class="col-12">
+            <label for="billingAddress">Billing Address</label>
+            <textarea id="billingAddress" pInputTextarea formControlName="billingAddress"></textarea>
+          </div>
+  
+          <!-- Enable Shipping Address -->
+          <div class="col-12">
+            <a href="#" (click)="toggleShipping()">+ Enable Shipping Address</a>
+          </div>
+  
+          <div class="col-12" *ngIf="showShipping">
+            <label for="shippingAddress">Shipping Address</label>
+            <textarea id="shippingAddress" pInputTextarea formControlName="shippingAddress"></textarea>
+          </div>
+        </div>
+      </form>
+      <div class="flex justify-content-end mt-4">
+        <button pButton type="button" label="Save & New" class="p-button-outlined mr-2 three-tab" (click)="save(true)"></button>
+        <button pButton type="button" label="Save" class="three-tab" (click)="save(false)"></button>
+      </div>
+    </p-tabPanel>
+  
+    <p-tabPanel header="Credit & Balance">
+        <div class="flex justify-content-end mt-4">
+            <button pButton type="button" label="Save & New" class="p-button-outlined mr-2 two-tab" (click)="save(true)"></button>
+            <button pButton type="button" label="Save" class="two-tab" (click)="save(false)"></button>
+          </div>
+    </p-tabPanel>
+  
+    <p-tabPanel header="Additional Fields">
+        <div class="flex justify-content-end mt-4">
+            <button pButton type="button" label="Save & New" class="p-button-outlined mr-2 one-tab" (click)="save(true)"></button>
+            <button pButton type="button" label="Save" (click)="save(false)"></button>
+          </div>
+    </p-tabPanel>
+  </p-tabView>
+  
+  
+  

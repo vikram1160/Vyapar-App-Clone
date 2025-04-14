@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class SmartConnectComponent {
 
+  whatsappMessage: string = 'https://wa.me/917887589262?text=I want to hire you';
+
+
+  openWhatsApp() {
+    window.open(this.whatsappMessage, '_blank');
+  }
+  
 }

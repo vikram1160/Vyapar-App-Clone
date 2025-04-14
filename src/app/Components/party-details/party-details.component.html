@@ -1,27 +1,79 @@
 <div class="party-details">
     <div class="row">
         <div class="col-3 add-party">
-            <i class="pi pi-search"></i><button   routerLink='/add-party' class="add-party-btn">Add Party</button>   <i  class="pi pi-ellipsis-v"></i>          
+            <i class="pi pi-search"></i><button   routerLink='/add-party' class="add-party-btn">Add Party</button>    <i class="pi pi-ellipsis-v" (click)="showDialog()" pTooltip="Manage Parties Active/Inactive" tooltipPosition="right"></i>
+            <p-dialog header="Manage Parties Active / Inactive" [modal]="true" [(visible)]="visible" [style]="{ width: '39rem' }">
+                <div class="row">
+                
+                      <!-- <i class="pi pi-search"></i> -->
+                    <input type="text" pInputText placeholder="Search..." />
+              
+                  </div>
+              <div class="row">
+                <div class="col-4">PARTIES
+                    <br>
+                    <br>
+                    Laptop Shop 
+                </div>
+                <div class="col-4">PHONE NO
+                    <br>
+                    <br>
+                  7887907564
+                </div>
+                <div class="col-4">PARTY ACTIVE STATUS
+                    <br>
+                    <br>
+                </div>
+              </div>
+                <div class="flex justify-end gap-2">
+                    <!-- <p-button label="Cancel" severity="secondary" (click)="visible = false" /> -->
+                    <p-button class="save-change" label="Save Change" (click)="visible = false" />
+                </div>
+            </p-dialog>
+            
+            <div class="main">
+                <div class="PARTY">
+                   PARTY
+                   <br>
+                   <br>
+                   <span>Mobail Shop</span>
+                   <br>
+                   laptop Shop
+                </div>
+                <div class="AMOUNT">
+                    AMOUNT
+                    <br>
+                   <br> 
+                  <span>1999</span>
+                  <br>
+                  <br>
+                  <span> 2800</span>
+                </div>
+            </div>
         </div>
         <div class="col-9">
             <div class="row ADMIN-ROW">
               <div class="col-8">
+                <br>
                 <label >Phone : <span routerLink='/add-party' >  <i class="pi pi-phone"></i>   Add Phone No</span> </label> <br>
                 <label >Email : <span routerLink='/add-party' > <i class="pi pi-envelope"></i>   Add Email ID</span> </label> <br>
                 <label >No Credit Limit Set : <span routerLink='/add-party'> Set Credit Limit </span> </label>
                 
               </div>
               <div class="col-4">
+                <div class="icon"><i class="pi pi-envelope
+                    " style="font-size: 1.6rem"></i> <i class="pi pi-whatsapp" style="font-size: 1.6rem"></i> <i class="pi pi-clock" style="font-size: 1.6rem"></i></div>
                 <label >Address : <span routerLink='/add-party'>  Add Address</span> </label> <br>
                 <label >GstIn : <span routerLink='/add-party'>  Add GSTIN</span> </label> <br>
-                <label >Party Status : <span>  Add</span>  </label> <br> 
+                <label >Party Status : <span class="switch">  <input type="checkbox" checked>
+                    <span class="slider round"></span></span>  </label> <br> 
               </div>
             </div>
             <div class="row TRANSACATIONS-ROW">
-                TRANSACATIONS  
+                TRANSACATIONS   
     
                 <div class="card">
-                    <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+                    <p-table [value]="products" [tableStyle]="{ 'min-width': '40rem' }" class="table table-hover">
                         <ng-template #header>
                             <tr>
                                 <th>Type</th>

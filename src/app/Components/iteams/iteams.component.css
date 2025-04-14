@@ -1,0 +1,90 @@
+.row{
+    margin-top: 10px;
+    margin-left: 10px;
+    
+    /* border: 1px solid black; */
+}
+.btnn{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.btn{
+    border: none;
+    box-shadow: 10px 4px 15px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+margin-top: 10px;
+    }
+button{
+    border: none;
+}
+.main{
+    display: flex;
+}
+.AMOUNT{
+    margin-left: 100px;
+    margin-top: 11px;
+    text-align: center;
+}
+.PARTY{
+    margin-left: 10px;
+    margin-top: 11px;
+}
+.TRANSACATIONS-ROW{
+    margin-top:50px; 
+    margin-left: 20px;
+}
+.add-party{
+    border: 1px solid black;
+    height: 470px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.add-party-btn{
+    margin-top: 14px;
+    margin-left: 50px;
+    border-radius: 50px;
+}
+.add-party-btn:hover{
+    background-color:lightblue
+}
+.pi-ellipsis-v{
+margin-left: 30px;
+}
+.pi-search{
+    margin-left: 10px;
+}
+i{
+    cursor: pointer;
+}
+label  {
+    cursor: pointer;
+    
+}
+label:hover{
+    background-color: #ebecec;
+}
+.col-9{
+    border: 1px solid black;
+    border-radius: 12px;
+    
+}
+input{
+    width:200px;
+    margin-left: 320px;
+    
+}
+.card{
+    margin-top:20px;
+}
+.bi-filetype-xlsx{
+    margin-left: 0px;
+}
+span{
+    cursor: pointer;
+    margin-top: 10px;
+}
+.row-dial{
+    margin-top: -16px;
+}

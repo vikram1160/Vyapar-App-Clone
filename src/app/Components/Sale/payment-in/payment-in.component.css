@@ -1,0 +1,35 @@
+.icon{
+    display: flex;
+    justify-content: center;  
+    
+}
+.card{
+    width: 200px;
+    border: none;
+}
+.icon-name{
+    display: flex;
+    justify-content: center;
+    margin-right: 1px;
+}
+span{
+    margin: 0px 10px; 
+}
+i{
+    margin: 0px 26px;
+    cursor: pointer;
+}
+.margin{
+    margin-left: 21px !important ;  
+}
+button{
+    background-color: rgb(50, 113, 239);
+    border: none;
+    width: 150px;
+    margin-left:620px;
+    margin-top: 30px;
+    color: white;
+    border-radius: 40px;
+    height: 36px;
+    
+}

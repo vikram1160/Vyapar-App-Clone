@@ -1,0 +1,157 @@
+
+      <div class="container text-center py-5">
+        <h2 class="fw-bold">Plans & Pricing</h2>
+        <p class="text-muted">Choose a plan that suits for your business</p>
+      
+        <div class="row mb-4 ">
+          <div class="col-md-6 mb-2">
+            <div class="dropdown d-inline me-2">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                1 Year Plan
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" >1 Year</a></li>
+                <li><a class="dropdown-item" >2 Years</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-primary"   (click)="changePriceForDevice('Desktop + Mobile')">Desktop + Mobile</button>
+              <button type="button" class="btn btn-outline-primary"  (click)="changePriceForDevice('Desktop')">Desktop</button>
+              <button type="button" class="btn btn-outline-primary"(click)="changePriceForDevice('Mobile')">Mobile</button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="row justify-content-center">
+          <!-- Silver Plan -->
+          <div class="col-md-5 mb-4">
+            <div class="bg-white plan-card position-relative">
+              <div class="mb-2">
+                <span class="plan-header">Silver Plan</span>
+              </div>
+              <div>
+                <span class="price">₹ {{silverPrice }}</span>
+                <span class="old-price">₹ 5699</span>
+              </div>
+              <div class="text-muted mb-3">1 YEAR | DESKTOP + MOBILE</div>
+              <button class="btn btn-outline-danger btn-buy mb-3" (click)="showDialog()">Buy Now</button>
+              <ul class="text-start list-unstyled">
+                <li>✔ Sync data across devices</li>
+                <li>✔ Create multiple companies <strong>(3 companies)</strong></li>
+                <li>✔ Generate E-way Bills <strong>(10 per month)</strong></li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Gold Plan -->
+          <div class="col-md-5 mb-4">
+            <div class=" bg plan-card position-relative">
+              <div class="d-flex justify-content-between">
+                <span class="plan-header">Gold Plan</span>
+                <span class="popular-badge">MOST POPULAR</span>
+              </div>
+              <div>
+                <span class="price">₹ {{silverPrice }}</span>
+                <span class="old-price">₹ 8299</span>
+              </div>
+              <div class="text-muted mb-3">1 YEAR | DESKTOP + MOBILE</div>
+              <p-button class="btn btn-danger btn-buy mb-3"  (click)="showDialog()">Buy Now</p-button>
+
+              <p-dialog header="Order Summary" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
+                <div class="container bg-white p-4 rounded shadow-sm">
+                  <h5><strong>Order Summary</strong></h5>
+                
+                  <div class="mt-3">
+                    <h6><strong>Plans</strong></h6>
+                    <div class="plan-box">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-2">
+                          <span class="fs-5">&#x1F451;</span>
+                          <span class="plan-title">Gold Plan</span>
+                        </div>
+                        <div class="text-end">
+                          <div>
+                            <span class="price-old">₹{{ originalPrice }}</span>
+                            <span class="price-new text-dark">₹{{ discountedPrice }}</span>
+                          </div>
+                          <div class="discount-badge mt-1">{{ discountPercentage }}% OFF</div>
+                        </div>
+                      </div>
+                      <div class="mt-2 d-flex gap-2">
+                        <span class="badge badge-plan">1 YEAR</span>
+                        <span class="badge badge-plan">DESKTOP + MOBILE</span>
+                      </div>
+                      <div class="text-warning mt-1" style="font-size: 0.85rem;">
+                        (Validity: 1 Year)
+                      </div>
+                    </div>
+                
+                    <h6><strong>Coupons & Referral</strong></h6>
+                    <div class="coupon-box" *ngIf="couponApplied">
+                      <div>
+                        <span class="text-warning">&#x25A1;</span>
+                        <strong>{{ couponCode }}</strong> Applied! ({{ couponDiscount * 100 }}% OFF)
+                      </div>
+                      <div class="text-danger">
+                        - ₹{{ discountAmount.toFixed(2) }}
+                        <span class="ms-2 text-muted" style="cursor: pointer;" (click)="removeCoupon()">&times;</span>
+                      </div>
+                    </div>
+                
+                    <div class="form-check mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="useGSTIN"
+                        [(ngModel)]="useGstin"
+                      />
+                      <label class="form-check-label" for="useGSTIN">
+                        Use GSTIN for this purchase
+                      </label>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control mb-1"
+                      placeholder="Enter GSTIN"
+                      [disabled]="!useGstin"
+                    />
+                    <small class="text-muted">
+                      NOTE: This number can’t be updated once order is completed
+                    </small>
+                
+                    <!-- <div class="mt-3">
+                      <h6><strong>Price Details</strong></h6>
+                      <div class="price-breakup">See Price Breakup &#x25B2;</div>
+                    </div> -->
+                  </div>
+                
+                  <div class="mt-4">
+                    <button class="pay-button" (click)="visible = false">Pay ₹{{ finalAmount.toFixed(2) }} /-</button>
+                  </div>
+                </div>
+                
+                  <!-- <div class="flex justify-end gap-2">
+                      <p-button label="Cancel" severity="secondary" (click)="visible = false"/>
+                      <p-button label="Save" (click)="visible = false"/>
+                  </div> -->
+              </p-dialog>
+              <ul class="text-start list-unstyled">
+                <li>✔ Sync data across devices</li>
+                <li>✔ Create multiple companies <strong>(Unlimited)</strong></li>
+                <li>✔ E-way Bills <strong>(Unlimited)</strong></li>
+                <li>✔ Manage godowns & Transfer stock</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Compare Button -->
+        <!-- <div class="compare-btn">
+          <button class="btn btn-primary rounded-pill px-4">+ Compare Silver & Gold Plan</button>
+        </div> -->
+      </div>
+      
+  
+    

@@ -1,0 +1,56 @@
+<h3>Banking with Vyapar</h3>
+<h5>Add Bank accounts on Vyapar and you can effortlessley:</h5>
+<div class="row roww">
+    <div class="col-3">
+        <h4>Print Bank Details on Invoices</h4>
+        Print account details on your invoices and get payments via NEFT/RTGS/IMPS etc.
+    </div>
+    <div class="col-3">
+        <h4>Track your transactions</h4>
+        Keep track of bank transactions by entering them on Vyapar to maintain accurate records.
+    </div>
+    <div class="col-3">
+        <h4>Receive Online Payments</h4>
+        Print QR code on your invoices or send payment links to your customers.
+    </div>
+</div>
+<div class="row">
+    <button (click)="showDialog()"> Add Bank Account</button>
+</div>
+
+<div class="container">
+    <p-dialog header="Add Bank Account"   [resizable]="false"
+[draggable]="false" [modal]="false" [(visible)]="visible" [style]="{ width: '50rem' }">
+<div class="ipl">
+    <input pInputText id="username" placeholder="Account Display Name" [(ngModel)]="value" />
+        <input pInputText id="username" placeholder="Opening Balance" [(ngModel)]="value" />
+</div>
+    <div class="row bank-row">
+        <p-calendar class="calendar" [(ngModel)]="date1" [showIcon]="true" inputId="buttondisplay" [showOnFocus]="false" />
+    </div>
+    <div class="row">
+       <div class="one">
+        <label>
+            <input type="checkbox" [(ngModel)]="showUPIDiv" />
+            <span class="header">Print UPI QR Code on Invoices</span>
+          </label>
+          
+          <div *ngIf="showUPIDiv" style="margin-top: 10px;">
+           <input class="ac" type="text" placeholder="Account Number"  />
+           <input class="ac" type="text" placeholder="IFSC Code"  /> 
+           <br>
+           <input class="ac" type="text" placeholder="UPI ID For QR Code"  />
+           <input class="ac" type="text" placeholder="Bank Name"  />
+          </div>   
+
+       </div> 
+    </div>
+
+    <div class="flex justify-end gap-2">
+        <p-button class="save-change" label="Add Bank Account" (click)="visible = false" />
+    </div>
+
+</p-dialog>
+</div>
+
+

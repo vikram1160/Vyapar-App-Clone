@@ -1,6 +1,12 @@
 .dashboard-container {
     padding: 20px;
   }
+  button{
+    border: none;
+    box-shadow: 10px 4px 15px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    height: 50px;
+  }
   .month{
     margin-left: 820px;
   }
@@ -15,7 +21,8 @@
     width: 48%;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white !important;
   }
   
   .receivable {
@@ -48,12 +55,44 @@
   .report-list {
     display: flex;
     gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
   }
 
-  i{
+  .li{
     margin-left: 387px;
     margin-top: -122px;
   }
+  .pi-arrow-down {
+    background-color: hsl(254, 65%, 91%);
+    border-radius: 50%;
+    height: 39px;
+    text-align: center;
+    width: 55px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: anchor-center;
+    color: rgb(0, 26, 255);
+    cursor: pointer;
+  }
+  .pi-arrow-up {
+    background-color: rgb(252, 199, 199);
+    border-radius: 50%;
+    height: 39px;
+    text-align: center;
+    width: 55px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: anchor-center;
+    margin-right: 20px !important;
+    color: red;
+    cursor: pointer;
+    
+  }
+  
   
   
 

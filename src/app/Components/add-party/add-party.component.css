@@ -1,0 +1,93 @@
+/* Ensure full width form inside the tab */
+form {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+  }.row{
+    margin-left: 10px;
+  }
+  
+  /* Label styling */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #3f3f3f;
+  }
+  
+  /* Input fields spacing */
+  input,
+  textarea,
+  p-dropdown {
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  
+  /* Adjust column padding for grid system */
+  .grid > .col-12,
+  .grid > .md\:col-4 {
+    padding: 0.5rem;
+  }
+  
+  /* Link to enable shipping */
+  a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Button area */
+  .flex {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  button{
+    margin-right: 40px;
+  }
+  .one-tab{
+    margin-right: 40px !important;
+  }
+  .two-tab{
+    margin-top: 340px;
+  }
+  .three-tab{
+    margin-top: 340px !important;
+  }
+  
+  .p-button-outlined {
+    border: 1px solid #007bff;
+    color: #007bff;
+    background: transparent;
+  }
+  
+  .p-button-outlined:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .grid > .md\:col-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* Optional: style the PrimeNG tab headers */
+  ::ng-deep .p-tabview-nav {
+    font-weight: 600;
+  }
+  
+  ::ng-deep .p-tabview-nav li.p-highlight {
+    background-color: #e8f0fe;
+    color: #1976d2;
+  }
+  
