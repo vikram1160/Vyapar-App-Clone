@@ -54,9 +54,11 @@ form {
   }
   .one-tab{
     margin-right: 40px !important;
+    /* margin-top: 100px !important; */
+    
   }
   .two-tab{
-    margin-top: 340px;
+    margin-top: 250px;
   }
   .three-tab{
     margin-top: 340px !important;

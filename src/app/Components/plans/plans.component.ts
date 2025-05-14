@@ -14,6 +14,8 @@ import { CommonModule } from '@angular/common';
 export class PlansComponent {
   silverPrice = 3999;
 
+  GoldPrice = 5999;
+  
   visible: boolean = false;
 
   showDialog() {
@@ -43,6 +45,15 @@ export class PlansComponent {
     this.couponApplied = false;
   }
 
+ 
+
+  selectedPlan: string = '1 Year Plan';
+
+  selectDuration(duration: string) {
+    this.selectedPlan = duration + ' Plan';
+    console.log('Selected:', this.selectedPlan);
+  }
+
 
   changePriceForDevice(device: string) {
     if (device === 'Desktop') {
@@ -52,5 +63,13 @@ export class PlansComponent {
     } else {
       this.silverPrice = 3999;
     }
+    if(device === 'Desktop'){
+      this.GoldPrice = 3999
+    }else if (device === 'Mobile') {
+      this.GoldPrice = 2999;
+    }else {
+      this.GoldPrice = 4999;
+    }
+
   }
 }

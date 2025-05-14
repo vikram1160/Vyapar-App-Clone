@@ -1,0 +1,70 @@
+.container{
+margin-left: 81px;
+width: 840px;
+}
+
+
+/* Date range and buttons row */
+.d-flex.align-items-center.gap-3.flex-wrap {
+  margin-bottom: 1rem;
+}
+
+/* Section Header (for accounting tab) */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Column styling */
+.particulars {
+  flex: 1;
+}
+
+.amount {
+  width: 150px;
+  text-align: right;
+}
+
+/* Entry inside accordion */
+.entry {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 16px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Amount styling */
+.amount-text {
+  width: 150px;
+  text-align: right;
+  color: green;
+}
+
+.amount-text.red {
+  color: red;
+}
+
+.amount-text.green {
+  color: green;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .header-row,
+  .entry {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .amount,
+  .amount-text {
+    text-align: left;
+    width: 100%;
+    margin-top: 4px;
+  }
+}
+

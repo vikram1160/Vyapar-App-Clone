@@ -1,6 +1,6 @@
 <div class="row">
     <h2>Purchase Bills</h2>
-    <button>+ Add Purchase</button>
+    <button routerLink="/add-purchase">+ Add Purchase</button>
 </div>
 
 <div class="row">
@@ -56,5 +56,34 @@
                 <span class="paid">Total</span> <br>
                 <span class="paid-text"> ₹ 15.423</span>
             </div>  
+    </div>
+</div>
+
+<div class="row">
+    <div class="">
+        <p-table class="teble" [value]="products" [tableStyle]="{ 'min-width': '40rem' }">
+            <ng-template #header>
+                <tr>
+                    <th>Date</th>
+                    <th>Invoice No</th>
+                    <th>Item Name </th>
+                    <th>QTY</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Amount</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-product>
+                <tr>
+                    <td>{{ product.date }}</td>
+                    <td>{{ product.invoice_no }}</td>
+                    <td>{{ product.party_name }}</td>
+                    <td>{{ product.transactoins_type }}</td>
+                    <td>{{ product.payment_type }}</td>
+                    <td>{{ product.amount }}</td>
+                    <td>{{ product.balance_due }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
     </div>
 </div>

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import {  Router,  } from '@angular/router';
 
 @Component({
   selector: 'app-add-puachase',
@@ -15,13 +15,30 @@ export class AddPuachaseComponent {
 
 
   isCash: boolean = false;
-  selectedCustomer: string = '';
+  customerName: string = '';
   phoneNumber: string = '';
-  invoiceNumber: number =  5;
-  invoiceDate: string = new Date().toISOString().split('T')[0];
-  roundOff: number = 0;
+  invoiceNumber: number | undefined;
+  i: number = 0;
+  name : string = ' ';
+  qty: number = 0;
+  unit : string = ' ';
+  price: number = 0;
+  discount: number = 0;
+  tax: number = 0;
 
-  customers = ['Customer 1', 'Customer 2', 'Customer 3'];
+  invoiceDate: Date = new Date();
+  roundOff: number = 0;
+  products:any [] = []
+  item: any;
+  transactionType: string = '';
+  paymentType: string = ''; // Added paymentType property
+  amount: number = 0; 
+  balanceDue: number = 0; // Added balanceDue property
+
+  firstItem: any 
+
+  constructor(private router :Router){}
+
   units = ['NONE', 'KG', 'Litre', 'Piece'];
   taxes = ['5%', '12%', '18%'];
 
@@ -32,81 +49,87 @@ export class AddPuachaseComponent {
   }
 
   calculateAmount(item: any): number {
-    let discountAmount = (item.price * item.qty * item.discount) / 100;
-    let taxAmount = ((item.price * item.qty - discountAmount) * parseFloat(item.tax)) / 100;
-    return item.price * item.qty - discountAmount + taxAmount;
+    let discountAmount = (this.price * this.qty * this.discount) / 100;
+    let taxAmount = (this.price * this.qty - discountAmount) / 100
+    return this.price * this.qty - discountAmount + taxAmount;
+    
   }
 
   calculateTotal(): number {
     return this.items.reduce((sum, item) => sum + this.calculateAmount(item), 0) + this.roundOff;
   }
 
+  
+
   saveInvoice() {
-    console.log('Invoice Saved', { invoiceNumber: this.invoiceNumber, items: this.items });
+    const invoiceId = this.products.length + 1;
+  
+    const quantity = Number(this.qty) || 0;
+    const pricePerUnit = Number(this.price) || 0;
+    const discount = Number(this.discount) || 0;
+  
+    const amount = quantity * pricePerUnit; // ✅ This must come before balanceDue
+    const balanceDue = amount - discount;
+  
+    const invoiceData = {
+      id: invoiceId,
+      invoice_no: this.invoiceNumber,
+      invoice_date: this.invoiceDate,
+      party_Name: this.name || '',
+      transactions_type: quantity.toString(),
+      payment_type: pricePerUnit.toFixed(2),
+      amount: amount.toFixed(2),
+      balance_due: balanceDue.toFixed(2),
+   
+    };
+  
+    if (this.invoiceNumber && this.invoiceDate) {
+      this.router.navigate(['/purchase-bills'], {
+        queryParams: invoiceData
+      });
+    } else {
+      alert("Please fill in the Invoice No and Date");
+    }
+  
+    console.log('Invoice Saved:', {
+      id: invoiceId,
+      qty: quantity,
+      price: pricePerUnit,
+      discount: discount,
+      totalAmount: balanceDue,
+    });
   }
+  
+  
+  // amount = (this.qty * this.price) - this.discount;
 
 
 
 
-  // purchaseForm: FormGroup;
-  // purchaseItems: any[] = [];
-  // states = [
-  //   { label: 'Maharashtra', value: 'Maharashtra' },
-  //   { label: 'Karnataka', value: 'Karnataka' },
-  //   { label: 'Delhi', value: 'Delhi' }
-  // ];
-  // units = [
-  //   { label: 'NONE', value: 'NONE' },
-  //   { label: 'KG', value: 'KG' },
-  //   { label: 'Litre', value: 'Litre' }
-  // ];
-  // taxOptions = [
-  //   { label: '5%', value: 5 },
-  //   { label: '12%', value: 12 },
-  //   { label: '18%', value: 18 }
-  // ];
-  // paymentTypes = [
-  //   { label: 'Cash', value: 'Cash' },
-  //   { label: 'Card', value: 'Card' },
-  //   { label: 'UPI', value: 'UPI' }
-  // ];
-
-  // constructor(private fb: FormBuilder) {
-  //   this.purchaseForm = this.fb.group({
-  //     search: [''],
-  //     phone: [''],
-  //     billNumber: [''],
-  //     billDate: [new Date()],
-  //     state: ['Maharashtra'],
-  //     paymentType: ['Cash'],
-  //     roundOff: [0],
-  //     total: [{ value: 0, disabled: true }]
+  // saveInvoice() {
+  //   const invoiceId = this.products.length + 1;
+  
+  //   const invoiceData = {
+  //     id: invoiceId,
+  //     invoice_no: this.invoiceNumber,
+  //     invoice_date: this.invoiceDate,  // Lowercase 'd' to match ngOnInit
+  //     item_name: this.item.name || '', // Safe access with optional chaining
+  //     item_qty: this.item.qty|| '',
+  //     item_unit: this.item.unit || '',
+  //     item_price: this.item.price || '',
+  //     item_discount: this.item.discount || '',
+  //     items: JSON.stringify(this.items) // Only if you need this for something else
+  //   };
+  
+  //   this.router.navigate(['/sale-invioces'], {
+  //     queryParams: invoiceData
+  //   });
+  
+  //   console.log('Invoice Saved:', {
+  //     id: invoiceId,
+  //     invoiceNumber: this.invoiceNumber,
+  //     items: this.items
   //   });
   // }
 
-  // addRow() {
-  //   this.purchaseItems.push({
-  //     name: '',
-  //     description: '',
-  //     qty: 1,
-  //     unit: 'NONE',
-  //     price: 0,
-  //     discount: 0,
-  //     tax: 5
-  //   });
-  //   this.calculateTotal();
-  // }
-
-  // calculateAmount(item: any) {
-  //   const discountAmount = (item.price * item.qty * item.discount) / 100;
-  //   const taxableAmount = item.price * item.qty - discountAmount;
-  //   const taxAmount = (taxableAmount * item.tax) / 100;
-  //   return taxableAmount + taxAmount;
-  // }
-
-  // calculateTotal() {
-  //   let total = this.purchaseItems.reduce((sum, item) => sum + this.calculateAmount(item), 0);
-  //   total = total + (this.purchaseForm.value.roundOff || 0);
-  //   this.purchaseForm.patchValue({ total });
-  // }
 }

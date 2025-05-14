@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="container mt-3">
+    <div class="d-flex align-items-center gap-3 flex-wrap">
+      <label class="fw-bold">From</label>
+      <p-calendar [(ngModel)]="fromDate" dateFormat="dd/mm/yy" showIcon></p-calendar>
+
+      <label class="fw-bold">To</label>
+      <p-calendar [(ngModel)]="toDate" dateFormat="dd/mm/yy" showIcon></p-calendar>
+
+      <div class="ms-auto d-flex gap-2">
+        <button class="btn btn-outline-success">
+          <i class="pi pi-file-excel"></i>
+        </button>
+        <button class="btn btn-outline-primary">
+          <i class="pi pi-print"></i>
+        </button>
+      </div>
+    </div>
+
+    <h5 class="mt-4 fw-bold">PROFIT AND LOSS REPORT</h5>
+
+  
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" name="viewType" value="vyapar" [(ngModel)]="viewType" />
+      <label class="form-check-label">Vyapar</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" name="viewType" value="accounting" [(ngModel)]="viewType" />
+      <label class="form-check-label">Accounting</label>
+    </div>
+
+    
+    <p-tabView [activeIndex]="viewType === 'vyapar' ? 0 : 1" (onChange)="onTabChange($event)">
+      <p-tabPanel >
+        <table class="table table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th>Particulars</th>
+              <th class="text-end">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of reportData">
+              <td [ngClass]="{'ps-4': item.isSubItem}">{{ item.label }}</td>
+              <td class="text-end text-{{ item.amount >= 0 ? 'success' : 'danger' }}">
+                ₹ {{ item.amount.toFixed(4) }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </p-tabPanel>
+      <p-tabPanel >
+        <!-- Section Header -->
+<div class="header-row">
+  <div class="particulars">Particulars</div>
+  <div class="amount">Amount</div>
+</div>
+
+<!-- Accordion Content -->
+<p-accordion [multiple]="true">
+  <p-accordionTab header="Incomes">
+    <p-accordion [multiple]="true">
+      <p-accordionTab header="Sale Accounts">
+        <ul>
+          <li class="entry">
+            <span>Sale (Revenue) Account</span>
+            <span class="amount-text">₹ 0.00000</span>
+          </li>
+        </ul>
+      </p-accordionTab>
+    </p-accordion>
+  </p-accordionTab>
+</p-accordion>
+
+      </p-tabPanel>
+    </p-tabView>
+
+
+
+  </div>
+
+
+</div>

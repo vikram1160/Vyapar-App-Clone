@@ -1,0 +1,63 @@
+<div class="container-fluid p-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="d-flex gap-2 align-items-center">
+      <label class="btn btn-secondary">
+        Date
+      </label>
+      <input type="date" class="form-control" [(ngModel)]="selectedDate" />
+      <select class="form-select" [(ngModel)]="selectedFirm">
+        <option *ngFor="let firm of firms" [value]="firm">{{ firm }}</option>
+      </select>
+    </div>
+
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-primary">
+        <i class="bi bi-file-earmark-excel"></i> Excel Report
+      </button>
+      <button class="btn btn-outline-secondary">
+        <i class="bi bi-printer"></i> Print
+      </button>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search"
+      [(ngModel)]="searchTerm"
+    />
+  </div>
+
+  <table class="table table-hover table-bordered text-center">
+    <thead class="table-light">
+      <tr>
+        <th>Name</th>
+        <th>Ref No.</th>
+        <th>Type</th>
+        <th>Total</th>
+        <th>Money In</th>
+        <th>Money Out</th>
+        <th>Print / Share</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="filteredTransactions.length > 0; else noData">
+      <tr *ngFor="let tx of filteredTransactions">
+        <td>{{ tx.name }}</td>
+        <td>{{ tx.refNo }}</td>
+        <td>{{ tx.type }}</td>
+        <td>{{ tx.total }}</td>
+        <td>{{ tx.moneyIn }}</td>
+        <td>{{ tx.moneyOut }}</td>
+        <td>
+          <button class="btn btn-sm btn-outline-secondary">Print</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <div class="text-center text-muted mt-5">No transactions to show</div>
+  </ng-template>
+</div>
+

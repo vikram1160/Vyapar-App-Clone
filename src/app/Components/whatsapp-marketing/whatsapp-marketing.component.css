@@ -1,0 +1,14 @@
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.card-text {
+  font-size: 0.9rem;
+}
+.arrow-btn{
+    width: 20%;
+}

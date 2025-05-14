@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart'
 import { DropdownModule } from 'primeng/dropdown';
-import { Inject, PLATFORM_ID } from '@angular/core';
+
 
 
 @Component({
@@ -18,15 +18,29 @@ export class HomeComponent {
   formatted: any
  
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    let date = new Date();
+  constructor() {
+    const today = new Date();
+    const daysToShow = 12;
+    const labels: string[] = [];
+    const data: number[] = [];
+  
+    for (let i = daysToShow - 1; i >= 0; i--) {
+      const date = new Date(today);
+      date.setDate(today.getDate() - i);
+  
+      const formatted = `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}`;
+      labels.push(formatted);
+  
+      // Replace this with real revenue logic or API call
+      data.push(this.getRandomRevenue()); // Mocking daily revenue
+    }
+  
     this.data = {
-      labels: ['1 Mar', '4 Mar', '7 Mar', '10 Mar', '13 Mar', '16 Mar', '19 Mar', '22 Mar', '25 Mar', '28 Mar', '29 Mar', '31 Mar'],
+      labels: labels,
       datasets: [
         {
           label: 'Revenue',
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1000, 0],
-          // const formatted = this.data.map((n: number) => n.toLocaleString()).join(','), 
+          data: data,
           borderColor: '#42A5F5',
           backgroundColor: 'rgba(87, 179, 253, 0.2)',
           fill: true,
@@ -36,7 +50,7 @@ export class HomeComponent {
         }
       ]
     };
-
+  
     this.options = {
       responsive: true,
       maintainAspectRatio: false,
@@ -44,7 +58,8 @@ export class HomeComponent {
         tooltip: {
           callbacks: {
             label: function (tooltipItem: any) {
-              return `₹ ${tooltipItem.raw}`;
+              const value = tooltipItem.raw;
+              return `₹ ${value.toLocaleString('en-IN')}`; // Use 'en-IN' for Indian number formatting
             }
           }
         }
@@ -59,16 +74,10 @@ export class HomeComponent {
       }
     };
   }
-
-
-
-  ngOnInit(): void {
-    this.loadPage();
-
-    
+  
+  getRandomRevenue(): number {
+    // Replace this with actual logic for revenue data
+    return Math.floor(Math.random() * 2000);
   }
 
-  loadPage(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 }

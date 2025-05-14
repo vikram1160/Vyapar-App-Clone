@@ -16,6 +16,16 @@ import { BankAccountComponent } from './Components/Cash-&-Bank/bank-account/bank
 import { ReportsComponent } from './Components/reports/reports.component';
 import { PlansComponent } from './Components/plans/plans.component';
 import { SaleComponent } from './Components/Sale/sale.component';
+import { SyncShareComponent } from './Components/Sync_&_Share/sync-share/sync-share.component';
+import { UserActivityTableComponent } from './Components/Sync_&_Share/user-activity-table/user-activity-table.component';
+import { SpartyComponent } from './Components/Settings/sparty/sparty.component';
+import { SaleOrderComponent } from './Components/Sale/sale-order/sale-order.component';
+import { DayBookComponent } from './Components/report/day-book/day-book.component';
+import { PurchaseComponent } from './Components/report/purchase/purchase.component';
+import { ProfitLossComponent } from './Components/report/profit-loss/profit-loss.component';
+import { AllTransactionComponent } from './Components/report/all-transaction/all-transaction.component';
+import { CashFlowComponent } from './Components/report/cash-flow/cash-flow.component';
+import { TrialBalanceReportComponent } from './Components/report/trial-balance-report/trial-balance-report.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,7 +45,17 @@ export const routes: Routes = [
     {path:'Whatsapp',component:WhatsappMarketingComponent},
     {path:'bank-ac',component:BankAccountComponent},
     {path:'plans',component:PlansComponent},
-    {path: 'reports/sale', component:SaleComponent }
-
-
+    {path: 'reports/sale', component:SaleComponent },
+    {path:'share',component:SyncShareComponent},
+    {path: 'userActivity', component:UserActivityTableComponent },
+    {path:'sale-order',component:SaleOrderComponent},
+    {path:'sParty',component:SpartyComponent},
+    {path:'reports/daybook',component:DayBookComponent},
+    {path:'reports/purchase',component:PurchaseComponent},
+    {path:'reports/profit-loss',component:ProfitLossComponent},
+    {path:'reports/all-transactions',component:AllTransactionComponent},
+    {path:'reports/cash-flow',component:CashFlowComponent},
+    {path:'reports/TBR',component:TrialBalanceReportComponent},
+    
+    
 ];

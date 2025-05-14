@@ -1,10 +1,40 @@
-<div class="btnn" >
+<!-- <div class="row">
+    <div class="btnn" >
 
+        <div class="card">
+            <button type="button" (click)="showHeaderI = true" *ngIf="!showHeaderI" class="btn btn-primary mb-3">
+              Show Header I
+            </button>
+          
+            <p-tabView>
+              <p-tabPanel header="Header I" *ngIf="showHeaderI">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore...
+                </p>
+              </p-tabPanel>
+          
+              <p-tabPanel header="Header II">
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium...
+                </p>
+              </p-tabPanel>
+          
+              <p-tabPanel header="Header III">
+                <p>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum...
+                </p>
+              </p-tabPanel>
+            </p-tabView>
+          </div>
+          
+</div> -->
+
+
+<div class="btnn" >
     <button class="btn">PRODUCTS </button>
     <button class="btn">SERVICES</button>
     <button class="btn">CATEGORY</button>
-    <button class="btn">UNITS</button>
-    
+    <button class="btn">UNITS</button>    
 </div>
 
 
@@ -13,8 +43,7 @@
         <div class="col-3 add-party">
             <i class="pi pi-search"></i><button  routerLink='/add-party' class="add-party-btn">Add Party</button>    <i class="pi pi-ellipsis-v" (click)="showDialog()"  tooltipPosition="right"></i>
             <p-dialog [closable]="false" class="dialog"  [(visible)]="visible" [style]="{ width: '13rem' }">
-                <div class="row row-dial">
-                
+                <div class="row row-dial">  
                <span (click)="visible = false">Bulk Inactive</span>
                <span (click)="visible = false">Bulk Active</span>
                <span (click)="visible = false">Bulk Assings Code </span>
@@ -49,7 +78,7 @@
               </div>
               <div class="col-4">
                 <label >STOCK QUANTITY :  -9</label> <br>
-                <label >STOCK VALUE : ₹ 0.00 </label> <br>
+                <label >STOCK VALUE : ₹ 0.00  </label> <br>
               </div>
             </div>
             <div class="row TRANSACATIONS-ROW"> 

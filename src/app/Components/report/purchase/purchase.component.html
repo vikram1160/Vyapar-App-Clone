@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+    <h2>Purchase Bills</h2>
+    <button  routerLink="/add-purchase">+ Add Purchase</button>
+</div>
+
+<div class="row">
+    <div class="row row-two">
+        <div class="col-3">
+            <div class="card flex justify-content-center">
+                <p-dropdown 
+                    [options]="cities" 
+                    [(ngModel)]="selectedCity" 
+                    optionLabel="name"
+                    placeholder="This Month"/>
+            </div>
+        </div>
+        <div class="col-3">
+            <p-calendar [(ngModel)]="date"  dateFormat="mm/dd/yy"></p-calendar>
+
+        </div>
+        <div class="col-3">
+            <div class="card flex justify-content-center">
+                <p-dropdown 
+                    [options]="ities" 
+                    [(ngModel)]="selecteCity" 
+                    optionLabel="name"
+                    placeholder="ALL FiRMS" />
+            </div>
+        </div>
+        <div class="col-3">
+          <div class="icon">
+            <i class="pi pi-chart-bar" style="margin: 7px 20px;"></i>
+            <i class="bi bi-filetype-xls" style="font-size: 1.1rem"></i>
+            <i class="pi pi-print" style="margin: 10px 20px;"></i>
+          </div>
+          <div class="icon-name">
+            <span>Graph</span>
+            <span>Excel</span>
+            <span>Print</span>
+          </div>
+        </div>
+    </div>
+    <div class="row-row">
+            <div class="one">
+                <span class="paid">Paid</span> <br>
+                <span class="paid-text"> ₹ 0.00 </span>
+            </div>  
+            <span class="plus">+</span>
+
+            <div class="two">
+                <span class="paid">Unpaid</span> <br>
+                <span class="paid-text"> ₹ 15.423 </span>
+            </div>  
+            <span class="plus">=</span>
+            <div class="three">
+                <span class="paid">Total</span> <br>
+                <span class="paid-text"> ₹ 15.423</span>
+            </div>  
+    </div>
+</div>
+
+<div class="row">
+    <div class="">
+        <p-table class="teble" [value]="products" [tableStyle]="{ 'min-width': '40rem' }">
+            <ng-template #header>
+                <tr>
+                    <th>Date</th>
+                    <th>Invoice No</th>
+                    <th>Item Name </th>
+                    <th>QTY</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Amount</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-product>
+                <tr>
+                    <td>{{ product.date }}</td>
+                    <td>{{ product.invoice_no }}</td>
+                    <td>{{ product.party_name }}</td>
+                    <td>{{ product.transactoins_type }}</td>
+                    <td>{{ product.payment_type }}</td>
+                    <td>{{ product.amount }}</td>
+                    <td>{{ product.balance_due }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+
+</div>

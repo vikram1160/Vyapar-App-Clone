@@ -1,3 +1,7 @@
+
+.container{
+width: 100%;
+}
 .plan-card {
     border-radius: 12px;
     padding: 20px;

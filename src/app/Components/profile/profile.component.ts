@@ -11,59 +11,63 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class ProfileComponent {
 
-  profileForm:  FormGroup
-
-  businessDetails = {
-    name: '',
-    phone: '',
-    gstin: '',
-    email: '',
-    address: ''
-  };
-
-  ngOnInit() {
-    const savedData = localStorage.getItem('businessDetails');
-    if (savedData) {
-      this.businessDetails = JSON.parse(savedData);
-    }
-  }
-  saveChanges() {
-    localStorage.setItem('businessDetails', JSON.stringify(this.businessDetails));
-    alert('Data saved successfully!');
-  }
-
+  profileForm: FormGroup;
+  signatureFile: File | null = null;
 
   constructor(private fb: FormBuilder) {
     this.profileForm = this.fb.group({
-      businessName: ['', Validators.required],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      businessName: [''],
+      phoneNumber: [''],
       gstin: [''],
-      email: ['', [Validators.required, Validators.email]],
+      email: [''],
       businessType: [''],
-      businessCategory: ['Mobile & Accessories'],
-      state: ['Maharashtra'],
+      businessCategory: [''],
+      state: [''],
       pincode: [''],
-      businessAddress: [''],
-      signature: [null]
+      businessAddress: ['']
     });
   }
-  
 
+  onFileSelected(event: any) {
+    this.signatureFile = event.target.files[0] || null;
+  }
+  
+  ngOnInit(): void {
+    const savedData = localStorage.getItem('businessProfile');
+    if (savedData) {
+      this.profileForm.patchValue(JSON.parse(savedData));
+    }
+  }
+
+  
   onSave() {
-    if (this.profileForm.valid) {
-      console.log('Profile Data:', this.profileForm.value);
+    const formData = this.profileForm.value;
+
+    if (this.signatureFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64Signature = reader.result as string;
+        const finalData = {
+          ...formData,
+          signature: base64Signature
+        };
+        localStorage.setItem('businessProfile', JSON.stringify(finalData));
+        alert('Form data saved to local storage!');
+      };
+      reader.readAsDataURL(this.signatureFile);
+    } else {
+      localStorage.setItem('businessProfile', JSON.stringify(formData));
+      alert('Form data saved to local storage!');
     }
   }
 
   onCancel() {
     this.profileForm.reset();
+    this.signatureFile = null;
+    alert('Form cleared!');
   }
 
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      this.profileForm.patchValue({ signature: file });
-    }
-  }
 
 }
+
+

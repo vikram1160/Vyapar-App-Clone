@@ -5,6 +5,116 @@
 
   <div class="row">
     <div class="col-6">
+      <!-- <div class="toggle-group">
+        <label>Credit</label>
+        <input type="radio" [(ngModel)]="isCash" />
+        <label>Cash</label>
+      </div> -->
+
+      <div class="customer-details">
+        <!-- <input type="text" placeholder="Customer Name " [(ngModel)]="customerName" />
+        <input type="text" placeholder="Phone No." [(ngModel)]="phoneNumber" /> -->
+      </div>
+    </div>
+
+
+    <div class="col-6">
+      <div class="invoice-info">
+        <label>Invoice Number</label>
+        <input type="number" [(ngModel)]="invoiceNumber" />
+
+        <label>Invoice Date</label>
+        <input type="date" [(ngModel)]="invoiceDate" />
+      </div>
+
+    </div>
+  </div>
+  <div class="table-responsive table-bordered">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Sr</th>
+          <th>Item</th>
+          <th>QTY</th>
+          <th>Price</th>
+          <th>Discount</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td><input type="text" [(ngModel)]="name" class="form-control" /></td>
+          <td><input type="number" [(ngModel)]="qty" class="form-control" /></td>
+          <td><input type="number" [(ngModel)]="price" class="form-control" /></td>
+          <td><input type="number" [(ngModel)]="discount" class="form-control" /></td>
+          <td><input type="number"  [(ngModel)]="amount" class="form-control" disabled=""></td>
+            
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+  <!-- <tbody>
+    <tr *ngFor="let item of items; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td><input type="text" [(ngModel)]="item.name" class="form-control" /></td>
+      <td><input type="number" [(ngModel)]="item.qty" class="form-control" /></td>
+      <td>
+        <select [(ngModel)]="item.unit" class="form-control">
+          <option *ngFor="let unit of units" [value]="unit">{{ unit }}</option>
+        </select>
+      </td>
+      <td><input type="number" [(ngModel)]="item.price" class="form-control" /></td>
+      <td><input type="number" [(ngModel)]="item.discount" class="form-control" /></td>
+      <td>
+        <select [(ngModel)]="item.tax" class="form-control">
+          <option *ngFor="let tax of taxes" [value]="tax">{{ tax }}</option>
+        </select>
+      </td>
+      <td>{{ calculateAmount(item) }}</td>
+    </tr>
+  </tbody>
+</div> -->
+
+
+
+  <!-- <button class="btn btn-primary mt-2" (click)="addRow()"> Add Row </button> -->
+
+  <div class="total-section mt-3">
+    <!-- <label>Round Off</label>
+    <input type="number" [(ngModel)]="roundOff" class="form-control d-inline w-auto mx-2" /> -->
+
+    <!-- <label>Total</label> -->
+    <!-- <input type="number" [value]="calculateTotal()" class="form-control d-inline w-auto" disabled /> -->
+  </div>
+
+  <button class="btn btn-success mt-2" (click)="saveInvoice()">Save</button>
+
+
+
+          <!-- <td>{{ i + 1 }}</td>
+          <td><input type="text" [(ngModel)]="name" class="form-control" /></td>
+          <td><input type="number" [(ngModel)]="qty" class="form-control" /></td>
+          <td><input type="number" [(ngModel)]="price" class="form-control" /></td>
+          <td><input type="number" [(ngModel)]="discount" class="form-control" /></td>
+          <td><input type="number"  [(ngModel)]="amount" class="form-control"></td> -->
+
+
+
+
+
+
+<!-- <div class="sale-container">
+  <h2>Purchase</h2>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-6">
       <div class="toggle-group">
         <label>Credit</label>
         <input type="radio" [(ngModel)]="isCash" />
@@ -75,4 +185,4 @@
     <input type="number" [value]="calculateTotal()" class="form-control d-inline w-auto" disabled />
   </div>
 
-  <button class="btn btn-success mt-2" (click)="saveInvoice()">Save</button>
+  <button class="btn btn-success mt-2" (click)="saveInvoice()">Save</button> -->

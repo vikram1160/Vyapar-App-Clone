@@ -1,5 +1,43 @@
 <div class="row">
-    <h3>Whatsapp Marketing</h3>
+    <p-tabView>
+    <p-tabPanel header="All ">
+        <div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let card of cards">
+      <div class="card h-100 shadow-sm">
+        <img [src]="card.image" class="card-img-top" alt="News Image" *ngIf="card.image">
+        <div class="card-body">
+          <!-- <h5 class="card-title" [innerHTML]="card.title"></h5>
+          <p class="card-text" [innerHTML]="card.description"></p> -->
+        </div>
+        <div class="card-footer text-end">
+          <button class="btn btn-outline-primary btn-sm">Read More →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </p-tabPanel>
+    <p-tabPanel header="Lasest Update">
+        <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
+        </p>
+    </p-tabPanel>
+    <p-tabPanel header=" Good Morning">
+           <div class="gallery-grid">
+  <div class="card" *ngFor="let item of morningQuotes">
+    <img [src]="item.imageUrl" alt="Good Morning Image" />
+    <div class="overlay">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.subtitle }}</p>
+    </div>
+    <button class="arrow-btn">→</button>
+  </div>
+</div>
+    </p-tabPanel>
+</p-tabView>
 </div>
 <div class="row">
 

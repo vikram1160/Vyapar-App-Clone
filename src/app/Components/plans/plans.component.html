@@ -6,14 +6,19 @@
         <div class="row mb-4 ">
           <div class="col-md-6 mb-2">
             <div class="dropdown d-inline me-2">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                1 Year Plan
+              <button 
+                class="btn btn-primary dropdown-toggle" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                {{ selectedPlan }}
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" >1 Year</a></li>
-                <li><a class="dropdown-item" >2 Years</a></li>
+                <li><a class="dropdown-item" (click)="selectDuration('1 Year')">1 Year</a></li>
+                <li><a class="dropdown-item" (click)="selectDuration('2 Years')">2 Years</a></li>
               </ul>
             </div>
+            
           </div>
           <div class="col-md-6 mb-2">
             <div class="btn-group" role="group">
@@ -53,7 +58,7 @@
                 <span class="popular-badge">MOST POPULAR</span>
               </div>
               <div>
-                <span class="price">₹ {{silverPrice }}</span>
+                <span class="price">₹ {{GoldPrice }}</span>
                 <span class="old-price">₹ 8299</span>
               </div>
               <div class="text-muted mb-3">1 YEAR | DESKTOP + MOBILE</div>

@@ -1,0 +1,112 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>Trial Balance Report</h4>
+    <div>
+      <button class="btn btn-sm btn-outline-danger me-2">Pdf</button>
+      <button class="btn btn-sm btn-outline-success">xls</button>
+    </div>
+  </div>
+
+  <div class="card p-3 mb-3">
+    <div class="d-flex flex-wrap gap-3 align-items-center">
+      <div>
+        <label class="form-label me-2 fw-bold">Period:</label>
+        <select class="form-select">
+          <option>Custom</option>
+        </select>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <input type="date" class="form-control" [(ngModel)]="startDate">
+        <span>To</span>
+        <input type="date" class="form-control" [(ngModel)]="endDate">
+      </div>
+      <div class="form-check ms-3">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="showWorking" />
+        <label class="form-check-label">Show working trial balance</label>
+      </div>
+      <div class="form-check ms-3">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="showZeroBalances" />
+        <label class="form-check-label">Show 0 balances account</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-2">
+    <a href="#" (click)="expandAll()" class="text-primary">Expand all accounts</a>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle text-center">
+      <thead class="table-light">
+        <tr>
+          <th class="text-start">ACCOUNT</th>
+          <th>OPENING BALANCE</th>
+          <th colspan="2">TRANSACTIONS IN THE PERIOD</th>
+          <th>CLOSING BALANCE</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>DEBIT</th>
+          <th>CREDIT</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="fw-bold">
+          <td colspan="5" class="text-start text-dark">Assets</td>
+        </tr>
+        <tr>
+          <td class="text-start ps-4">Fixed Assets</td>
+          <td>0 Dr.</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0 Dr.</td>
+        </tr>
+        <tr>
+          <td class="text-start ps-4">Non Current Assets</td>
+          <td>0 Dr.</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0 Dr.</td>
+        </tr>
+        <tr class="fw-bold">
+          <td class="text-start ps-4">Current Assets</td>
+          <td>920194.1 Dr.</td>
+          <td>38822</td>
+          <td>11600</td>
+          <td>947416.1 Dr.</td>
+        </tr>
+        <tr>
+          <td class="text-start ps-5">Sundry Debtors</td>
+          <td>2196 Dr.</td>
+          <td>26822</td>
+          <td>200</td>
+          <td>28818 Dr.</td>
+        </tr>
+        <tr>
+          <td class="text-start ps-5">Input Duties & Taxes</td>
+          <td>0 Dr.</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0 Dr.</td>
+        </tr>
+        <tr>
+          <td class="text-start ps-5">Bank Accounts</td>
+          <td>0 Dr.</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0 Dr.</td>
+        </tr>
+        <tr>
+          <td class="text-start ps-5">Cash Accounts</td>
+          <td>908999 Dr.</td>
+          <td>0</td>
+          <td>11400</td>
+          <td>897599 Dr.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

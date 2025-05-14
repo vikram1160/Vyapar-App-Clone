@@ -1,0 +1,28 @@
+.container-fluid{
+    width: 80%;
+    margin-left: 18%;
+}
+
+input{
+    width: 20%;
+}
+
+
+body, table, input, button, select {
+  font-size: 1rem;
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  table th, table td {
+    font-size: 1.1rem;
+  }
+
+  .form-control, .form-select {
+    font-size: 1.1rem;
+  }
+  
+}

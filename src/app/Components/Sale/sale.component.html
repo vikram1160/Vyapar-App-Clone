@@ -1,1 +1,85 @@
-<p>sale works!</p>
+<div class="main-content">
+    <div class="container-fluid p-3">
+  <div class="d-flex flex-wrap align-items-center gap-3">
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+        This Month
+      </button>
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-text">Between</span>
+      <input type="date" class="form-control" [(ngModel)]="fromDate">
+      <span class="input-group-text">To</span>
+      <input type="date" class="form-control" [(ngModel)]="toDate">
+    </div>
+
+    <select class="form-select w-auto" [(ngModel)]="selectedFirm">
+      <option *ngFor="let firm of firms">{{ firm }}</option>
+    </select>
+
+    <select class="form-select w-auto" [(ngModel)]="selectedUser">
+      <option *ngFor="let user of users">{{ user }}</option>
+    </select>
+
+    <div class="ms-auto d-flex gap-3">
+      <i class="bi bi-bar-chart fs-4" title="Graph"></i>
+      <i class="bi bi-file-earmark-excel fs-4" title="Excel Report"></i>
+      <i class="bi bi-printer fs-4" title="Print"></i>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center gap-3 my-4 flex-wrap">
+    <div class="card text-white bg-success p-3">
+      <h5>Paid</h5>
+      <h4>₹ {{ paidAmount | number:'1.4-4' }}</h4>
+    </div>
+    <div class="card text-white bg-primary p-3">
+      <h5>Unpaid</h5>
+      <h4>₹ {{ unpaidAmount | number:'1.4-4' }}</h4>
+    </div>
+    <div class="card text-white bg-warning p-3">
+      <h5>Total</h5>
+      <h4>₹ {{ (paidAmount + unpaidAmount) | number:'1.4-4' }}</h4>
+    </div>
+  </div>
+
+  <h5>Transactions</h5>
+  <div class="d-flex justify-content-between align-items-center my-2">
+    <input type="text" class="form-control w-25" placeholder="Search Transactions..." [(ngModel)]="searchTerm">
+   <button class="btn btn-primary" (click)="navigateToNewComponent(); openComponent('AddSale')">
+  <i class="bi bi-plus-circle"></i> Add Sale
+</button>
+
+  </div>
+
+  <table class="table table-hover table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>Date</th>
+        <th>Invoice</th>
+        <th>Party Name</th>
+        <th>Transaction Type</th>
+        <th>Payment Type</th>
+        <th>Amount</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="transactions.length === 0">
+        <td colspan="7" class="text-center">No transactions to show</td>
+      </tr>
+      <tr *ngFor="let tx of transactions">
+        <td>{{ tx.date }}</td>
+        <td>{{ tx.invoice }}</td>
+        <td>{{ tx.partyName }}</td>
+        <td>{{ tx.transactionType }}</td>
+        <td>{{ tx.paymentType }}</td>
+        <td>₹ {{ tx.amount }}</td>
+        <td>₹ {{ tx.balance }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>

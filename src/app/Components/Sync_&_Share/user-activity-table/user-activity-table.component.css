@@ -1,0 +1,11 @@
+.table td, .table th {
+    vertical-align: middle;
+  }
+  .bg-info-subtle {
+    background-color: #e6f2fa !important;
+  }
+  .badge {
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+  

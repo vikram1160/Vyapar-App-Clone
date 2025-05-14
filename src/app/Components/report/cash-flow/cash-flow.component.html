@@ -1,0 +1,91 @@
+<div class="container-fluid px-3 py-2">
+ 
+  <div class="row g-2 align-items-center mb-2 flex-wrap">
+    <div class="col-auto">
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          This Month
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Week</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-auto">
+      <label class="form-label me-1">Between</label>
+      <input type="date" class="form-control d-inline-block w-auto" value="2025-05-01">
+    </div>
+
+    <div class="col-auto">
+      <label class="form-label me-1">To</label>
+      <input type="date" class="form-control d-inline-block w-auto" value="2025-05-31">
+    </div>
+
+    <div class="col-auto">
+      <select class="form-select">
+        <option>ALL FIRMS</option>
+        <option>Firm A</option>
+        <option>Firm B</option>
+      </select>
+    </div>
+
+    <div class="col-auto ms-auto d-flex align-items-center">
+      <span class="text-success fw-bold">
+        Opening Cash-in Hand: ₹ 8,97,599.0000
+      </span>
+    </div>
+
+    <div class="col-auto">
+      <!-- <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="zeroTransCheck">
+        <label class="form-check-label" for="zeroTransCheck">
+          Show zero amount transaction
+        </label>
+      </div> -->
+    </div>
+
+    <div class="col-auto ms-auto d-flex gap-2">
+      <button class="btn btn-outline-primary">
+        <i class="bi bi-file-earmark-excel"></i> Excel Report
+      </button>
+      <button class="btn btn-outline-secondary">
+        <i class="bi bi-printer"></i> Print
+      </button>
+    </div>
+  </div>
+
+
+  <div class="row mb-2">
+    <div class="col-12">
+      <input class="form-control" type="search" placeholder="Search..." />
+    </div>
+  </div>
+
+  
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle text-center">
+      <thead class="table-light">
+        <tr>
+          <th>DATE</th>
+          <th>REF NO.</th>
+          <th>NAME</th>
+          <th>CATEGORY</th>
+          <th>TYPE</th>
+          <th>CASH IN</th>
+          <th>CASH OUT</th>
+          <th>RUNNING BALANCE</th>
+          <th>PRINT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="9" class="text-center">No transactions to show</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

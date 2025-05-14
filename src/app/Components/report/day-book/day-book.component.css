@@ -1,0 +1,14 @@
+.container-fluid{
+    margin-left: 152px;
+    width: 854px;
+}
+input[type="date"] {
+  width: 150px;
+}
+
+select.form-select {
+  width: 180px;
+}
+.form-control{
+  width: 150px;
+}
