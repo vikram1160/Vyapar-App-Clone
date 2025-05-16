@@ -32,7 +32,7 @@ export class HomeComponent {
       labels.push(formatted);
   
       // Replace this with real revenue logic or API call
-      data.push(this.getRandomRevenue()); // Mocking daily revenue
+      data.push(this.getRandomRevenue()); 
     }
   
     this.data = {
@@ -59,7 +59,7 @@ export class HomeComponent {
           callbacks: {
             label: function (tooltipItem: any) {
               const value = tooltipItem.raw;
-              return `₹ ${value.toLocaleString('en-IN')}`; // Use 'en-IN' for Indian number formatting
+              return `₹ ${value.toLocaleString('en-IN')}`; 
             }
           }
         }
@@ -76,7 +76,6 @@ export class HomeComponent {
   }
   
   getRandomRevenue(): number {
-    // Replace this with actual logic for revenue data
     return Math.floor(Math.random() * 2000);
   }
 

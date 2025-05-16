@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { DrawerModule } from 'primeng/drawer';
 
 @Component({
   selector: 'app-setting',
   standalone: true,
-  imports: [RouterLink,],
+  imports: [DrawerModule,],
   templateUrl: './setting.component.html',
   styleUrl: './setting.component.css'
 })

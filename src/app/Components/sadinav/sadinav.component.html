@@ -1,128 +1,118 @@
-<nav class="nav flex-column border border-dark"  style="width: 250px; height: 100%; background-color: rgb(39, 34, 53); ">
-    <a class="nav-link active" routerLink="" (click)="hideReports()"> <i class="pi pi-home" style="font-size: 1rem"></i> Home </a>
-  
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle"role="button"  data-bs-toggle="dropdown" (click)="hideReports()">
-        <i class="pi pi-users" style="font-size: 1rem"></i> Parties
-      </a>
-      <ul class="dropdown-menu" >
-        <li><a class="dropdown-item" routerLink="party-details" >Party Details <span style="margin-left: 100px;"><i class="pi pi-plus" style="font-size: 0.8rem"></i> </span> </a></li>
-        <li><a class="dropdown-item" routerLink="smart-connect">Smart Connect</a></li>
-      </ul>
-    </li>
-    
-    <li class="nav-item ">
-      <a class="nav-link " routerLink="iteam" role="button" (click)="hideReports()">
-        <i class="pi pi-shopping-bag"  style="font-size: 1rem"></i> Items
-        <span style="margin-left: 123px;"><i class="pi pi-plus" style="font-size: 0.8rem"></i> </span> </a> 
-        
-    </li>
-  
-    <li class="nav-item dropdown dropdown-menu-dark">
-      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
-        <i class="pi pi-th-large" style="font-size: 1rem"></i> Sale
-      </a>
-      <ul class="dropdown-menu" >
-        <li><a class="dropdown-item" routerLink="sale-invioces" (click)="hideReports()" >Sale Invoices </a></li>
-        <!-- <li><a class="dropdown-item" routerLink="#">Estimate / Quotation</a></li> -->
-        <li><a class="dropdown-item" routerLink="paymeny-in" (click)="hideReports()">Payment In</a></li>
-        <li><a class="dropdown-item" routerLink="sale-order" (click)="hideReports()">Sale Order</a></li>
-        <!-- <li><a class="dropdown-item" routerLink="#">Delivery Challan</a></li> -->
-        <!-- <li><a class="dropdown-item" routerLink="#">Sale Return / Credit Note</a></li>
-        <li><a class="dropdown-item" routerLink="#">Vyapar POS</a></li> -->
-  
-  
-      </ul>
-    </li>
-  
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" >
-        <i class="pi pi-shopping-cart" style="font-size: 1rem"></i> Purchase & Expense
-      </a>
-      <ul class="dropdown-menu" >
-        <li><a class="dropdown-item" routerLink="purchase-bills" (click)="hideReports()">Purchase Bills</a></li>
-        <li><a class="dropdown-item" routerLink="payment-out" (click)="hideReports()">Payment Out</a></li>
-        <!-- <li><a class="dropdown-item" routerLink="#">Expenses</a></li> -->
-        <li><a class="dropdown-item" routerLink="  "  (click)="hideReports()">Purchase Order</a></li>
-        <!-- <li><a class="dropdown-item" routerLink="#">Purchase Return / Dr note</a></li> -->
-      </ul>
-    </li>
-  
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" >
-        <i class="pi pi-chart-line" style="font-size: 1rem"></i> Grow Your Business
-      </a>
-      <ul class="dropdown-menu" >
-        <li><a class="dropdown-item" routerLink="Whatsapp" (click)="hideReports()">Whatsapp Marketing</a></li>
-        <li><a class="dropdown-item" routerLink=" " (click)="hideReports()">Online Stor</a></li>
-      </ul>
-    </li>
-  
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" >
-        <i class="pi pi-building-columns" style="font-size: 1rem"></i> Cash & Bank
-      </a>
-      <ul class="dropdown-menu" >
-        <li><a class="dropdown-item" routerLink="bank-ac" (click)="hideReports()">Bank Accounts</a></li>
-        <li><a class="dropdown-item" routerLink="" (click)="hideReports()">Cash In Hand</a></li>
-        <!-- <li><a class="dropdown-item" routerLink="#">Chequse</a></li>
-        <li><a class="dropdown-item" routerLink="#">Loan Account</a></li> -->
-        
-      </ul>
-    </li>
-  
-   <li class="nav-item dropdown">
-  <a class="nav-link" role="button" routerLink="/reports/sale" (click)="toggleReports()">
-    <i class="pi pi-chart-bar" style="font-size: 1rem"></i> Reports
-  </a>
+<nav class="nav flex-column border border-dark" style="width: 250px; height: 100%; background-color: rgb(39, 34, 53); ">
+  <a class="nav-link active" routerLink="" (click)="hideReports()"> <i class="pi pi-home" style="font-size: 1rem"></i>
+    Home </a>
 
-</li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" (click)="hideReports()">
+      <i class="pi pi-users" style="font-size: 1rem"></i> Parties
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" routerLink="party-details">Party Details <span style="margin-left: 100px;"><i
+              class="pi pi-plus" style="font-size: 0.8rem"></i> </span> </a></li>
+      <li><a class="dropdown-item" routerLink="smart-connect">Smart Connect</a></li>
+    </ul>
+  </li>
 
-  
-    <li class="nav-item dropdown ">
-      <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown" >
-        <i class="pi pi-sync" style="font-size: 1rem"></i> Sync Share & Backup
-      </a>
-      <ul class="dropdown-menu" >
-        <li><a class="dropdown-item" routerLink="share" (click)="hideReports()">Sync & Share</a></li>
-        <li><a class="dropdown-item" routerLink="" (click)="hideReports()">Auto Backup</a></li>  
-        <!-- <li><a class="dropdown-item" routerLink="#">Backup To Computer</a></li>
-        <li><a class="dropdown-item" routerLink="#">Backup To Drive</a></li>
-        <li><a class="dropdown-item" routerLink="#">Restore Backup</a></li> -->
-      </ul>
-    </li>
-  
-    <li class="nav-item dropdown">
-      <a class="nav-link" role="button" (click)="visible = true" (click)="hideReports()">
-        <i class="pi pi-cog" style="font-size: 1rem"></i> Setting
-      </a>
-    
-      <p-drawer header="Settings" [(visible)]="visible" position="full">
-        <app-setting></app-setting>
-      </p-drawer>
-      <!-- <app-setting></app-setting> -->
-    </li>
-  
-    <li class="nav-item dropdown ">
-      <a class="nav-link  " role="button" data-bs-toggle="dropdown" routerLink="plans" (click)="hideReports()">
-        <i class="bi bi-award" style="font-size: 1.2rem"></i> Plans & Pricing 
-      </a>
-    </li>
-    <br>
-    <br>
-    
-    <li class="nav-item dropdown ">
-      <a class="nav-link " role="button"  routerLink="Profile" (click)="hideReports()"  >
-        <i class="pi pi-user" style="font-size: 1rem"></i> Profile  <span style="margin-left: 120px;"><i class="pi pi-plus" style="font-size: 0.8rem"></i> </span>
-      </a>
-    </li>
-    <br>
-    <!-- <router-outlet></router-outlet> -->
-     <div *ngIf="showReports" class="dropdown-menus show ">
+  <li class="nav-item ">
+    <a class="nav-link" routerLink="iteam" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }"
+      (click)="hideReports()">
+      <i class="pi pi-shopping-bag" style="font-size: 1rem"></i> Items
+      <span style="margin-left: 123px;"><i class="pi pi-plus" style="font-size: 0.8rem"></i></span>
+    </a>
+
+  </li>
+
+  <li class="nav-item dropdown dropdown-menu-dark">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+      <i class="pi pi-th-large" style="font-size: 1rem"></i> Sale
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" routerLink="sale-invioces" (click)="hideReports()">Sale Invoices </a></li>
+      <li><a class="dropdown-item" routerLink="paymeny-in" (click)="hideReports()">Payment In</a></li>
+      <li><a class="dropdown-item" routerLink="sale-order" (click)="hideReports()">Sale Order</a></li>
+
+
+
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+      <i class="pi pi-shopping-cart" style="font-size: 1rem"></i> Purchase & Expense
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" routerLink="purchase-bills" (click)="hideReports()">Purchase Bills</a></li>
+      <li><a class="dropdown-item" routerLink="payment-out" (click)="hideReports()">Payment Out</a></li>
+      <li><a class="dropdown-item" routerLink="  " (click)="hideReports()">Purchase Order</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+      <i class="pi pi-chart-line" style="font-size: 1rem"></i> Grow Your Business
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" routerLink="Whatsapp" (click)="hideReports()">Whatsapp Marketing</a></li>
+      <li><a class="dropdown-item" routerLink=" " (click)="hideReports()">Online Stor</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+      <i class="pi pi-building-columns" style="font-size: 1rem"></i> Cash & Bank
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" routerLink="bank-ac" (click)="hideReports()">Bank Accounts</a></li>
+      <li><a class="dropdown-item" routerLink="" (click)="hideReports()">Cash In Hand</a></li>
+
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link" role="button" routerLink="/reports/sale" (click)="toggleReports()">
+      <i class="pi pi-chart-bar" style="font-size: 1rem"></i> Reports
+    </a>
+
+  </li>
+
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle " role="button" data-bs-toggle="dropdown">
+      <i class="pi pi-sync" style="font-size: 1rem"></i> Sync Share & Backup
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" routerLink="share" (click)="hideReports()">Sync & Share</a></li>
+      <li><a class="dropdown-item" routerLink="" (click)="hideReports()">Auto Backup</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link" role="button" routerLink="drawer" (click)="hideReports()">
+      <i class="pi pi-cog" style="font-size: 1rem"></i> Setting
+    </a>
+  </li>
+
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link  " role="button" data-bs-toggle="dropdown" routerLink="plans" (click)="hideReports()">
+      <i class="bi bi-award" style="font-size: 1.2rem"></i> Plans & Pricing
+    </a>
+  </li>
+  <br>
+  <br>
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link " role="button" routerLink="Profile" (click)="hideReports()">
+      <i class="pi pi-user" style="font-size: 1rem"></i> Profile <span style="margin-left: 120px;"><i class="pi pi-plus"
+          style="font-size: 0.8rem"></i> </span>
+    </a>
+  </li>
+  <br>
+
+
+
+  <div *ngIf="showReports" class="dropdown-menus show ">
     <app-reports></app-reports>
   </div>
-    
-   
-    
-    
-  </nav> 
+
+</nav>

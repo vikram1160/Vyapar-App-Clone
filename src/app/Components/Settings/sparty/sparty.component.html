@@ -1,2 +1,128 @@
-<p>sparty works!</p>
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat adipisci reiciendis tempora perferendis? Molestiae necessitatibus voluptatibus neque dicta dolorum obcaecati, rem voluptatum! Maiores rem temporibus aliquam, quo architecto voluptates molestias?
+<div class="container-fluid p-3">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Application</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="passcode">
+            <label class="form-check-label" for="passcode">Enable Passcode</label>
+          </div>
+
+          <div class="mt-3">
+            <label>Business Currency</label>
+            <select class="form-select">
+              <option>₹</option>
+              <option>$</option>
+              <option>€</option>
+            </select>
+          </div>
+
+          <div class="mt-3">
+            <label>Amount (upto Decimal Places)</label>
+            <div class="input-group">
+              <input type="number" class="form-control" value="5">
+              <span class="input-group-text">.00000</span>
+            </div>
+          </div>
+
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" checked id="gstin">
+            <label class="form-check-label" for="gstin">GSTIN Number</label>
+          </div>
+
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="negativestock">
+            <label class="form-check-label" for="negativestock">Stop Sale on Negative Stock</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title mb-0">Multi Firm</h5>
+            <a href="#" class="text-primary">+ Add Firm</a>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="firm" checked>
+            <label class="form-check-label">LAPTOP HUB <span class="text-muted">(DEFAULT)</span></label>
+            <button class="btn btn-link btn-sm p-0"><i class="bi bi-pencil"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Backup & History</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="autobackup">
+            <label class="form-check-label" for="autobackup">Auto Backup</label>
+          </div>
+          <p class="mt-2 text-muted">Last Backup 29/03/2025 | 12:03 AM</p>
+
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" checked id="audit">
+            <label class="form-check-label" for="audit">Audit Trail</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">More Transactions</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" checked id="estimate">
+            <label class="form-check-label" for="estimate">Estimate/Quotation</label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" checked id="order">
+            <label class="form-check-label" for="order">Sale/Purchase Order</label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="income">
+            <label class="form-check-label" for="income">Other Income</label>
+          </div>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="fa">
+            <label class="form-check-label" for="fa">Fixed Assets (FA)</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stock Transfer -->
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Stock Transfer Between Godowns</h5>
+          <p class="small text-muted">Manage all your stores/godowns and transfer stock seamlessly between them.</p>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="godown">
+            <label class="form-check-label" for="godown">Godown management & Stock transfer</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">Customize Your View</h5>
+          <p class="small text-muted">Choose Your Screen Zoom/Scale</p>
+          <input type="range" class="form-range" min="70" max="130" step="10" value="115">
+          <button class="btn btn-primary btn-sm mt-2">Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

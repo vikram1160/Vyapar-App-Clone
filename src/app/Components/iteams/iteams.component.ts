@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
 })
 export class IteamsComponent {
 
-  showHeaderI = false; // initially hidden
+  showHeaderI = false;
 
   products =[
     { id: 3, type: "Sale", number: "4", date: '15/4/2025',total:'1200 ',balance:'1200'},  
@@ -31,4 +31,14 @@ export class IteamsComponent {
     showDialog() {
         this.visible = true;
     }
+
+     items = [
+    { name: 'is', quantity: -9, value: 0 },
+    { name: 'item one', quantity: -1, value: 0 },
+    { name: 'key borde', quantity: 0, value: 0 },
+    { name: 'laptop hub', quantity: -1, value: 0 },
+    { name: 'mause', quantity: 1, value: 200 },
+    { name: 'mobails', quantity: 1, value: 0 },
+    { name: 'monail', quantity: 0, value: 0 }
+  ];
 }

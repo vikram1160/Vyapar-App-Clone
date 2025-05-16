@@ -1,5 +1,8 @@
+
+
+
 .dashboard-container {
-    padding: 20px;
+    padding: 2%;
   }
 
   
@@ -78,6 +81,7 @@
     align-items: anchor-center;
     color: rgb(0, 26, 255);
     cursor: pointer;
+    margin-left: 85%;
   }
   .pi-arrow-up {
     background-color: rgb(252, 199, 199);
@@ -89,7 +93,7 @@
     display: flex;
     justify-content: center;
     align-items: anchor-center;
-    margin-right: 20px !important;
+    margin-left: 85%;
     color: red;
     cursor: pointer;
     

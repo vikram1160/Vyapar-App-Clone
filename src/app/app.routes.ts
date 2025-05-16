@@ -26,36 +26,48 @@ import { ProfitLossComponent } from './Components/report/profit-loss/profit-loss
 import { AllTransactionComponent } from './Components/report/all-transaction/all-transaction.component';
 import { CashFlowComponent } from './Components/report/cash-flow/cash-flow.component';
 import { TrialBalanceReportComponent } from './Components/report/trial-balance-report/trial-balance-report.component';
+import { AllPartiesComponent } from './Components/report/all-parties/all-parties.component';
+import { StockSummaryComponent } from './Components/report/stock-summary/stock-summary.component';
+import { TransactionComponent } from './Components/Settings/transaction/transaction.component';
+import { PrintComponent } from './Components/Settings/print/print.component';
+import { DrawerComponent } from './Components/Settings/drawer/drawer.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    {path:'party-details',component:PartyDetailsComponent},
-    {path:'smart-connect',component:SmartConnectComponent},
-    {path:'iteam',component:IteamsComponent},
-    {path:'Profile',component:ProfileComponent},
-    {path:'add-sale',component:AddSaleComponent},
-    {path:'add-purchase',component:AddPuachaseComponent},
-    {path:'report',component:ReportsComponent},
-    {path:'add-party',component:AddPartyComponent},
-    {path:'sale-invioces',component:SaleInviocesComponent},
-    {path:'paymeny-in',component:PaymentInComponent},
-    {path:'purchase-bills',component:PurchaseBillsComponent},
-    {path:'payment-out',component:PaymentOutComponent},
-    {path:'Whatsapp',component:WhatsappMarketingComponent},
-    {path:'bank-ac',component:BankAccountComponent},
-    {path:'plans',component:PlansComponent},
-    {path: 'reports/sale', component:SaleComponent },
-    {path:'share',component:SyncShareComponent},
-    {path: 'userActivity', component:UserActivityTableComponent },
-    {path:'sale-order',component:SaleOrderComponent},
-    {path:'sParty',component:SpartyComponent},
-    {path:'reports/daybook',component:DayBookComponent},
-    {path:'reports/purchase',component:PurchaseComponent},
-    {path:'reports/profit-loss',component:ProfitLossComponent},
-    {path:'reports/all-transactions',component:AllTransactionComponent},
-    {path:'reports/cash-flow',component:CashFlowComponent},
-    {path:'reports/TBR',component:TrialBalanceReportComponent},
-    
-    
+    { path: 'party-details', component: PartyDetailsComponent },
+    { path: 'smart-connect', component: SmartConnectComponent },
+    { path: 'iteam', component: IteamsComponent },
+    { path: 'Profile', component: ProfileComponent },
+    { path: 'add-sale', component: AddSaleComponent },
+    { path: 'add-purchase', component: AddPuachaseComponent },
+    { path: 'report', component: ReportsComponent },
+    { path: 'add-party', component: AddPartyComponent },
+    { path: 'sale-invioces', component: SaleInviocesComponent },
+    { path: 'paymeny-in', component: PaymentInComponent },
+    { path: 'purchase-bills', component: PurchaseBillsComponent },
+    { path: 'payment-out', component: PaymentOutComponent },
+    { path: 'Whatsapp', component: WhatsappMarketingComponent },
+    { path: 'bank-ac', component: BankAccountComponent },
+    { path: 'plans', component: PlansComponent },
+    { path: 'reports/sale', component: SaleComponent },
+    { path: 'share', component: SyncShareComponent },
+    { path: 'userActivity', component: UserActivityTableComponent },
+    { path: 'sale-order', component: SaleOrderComponent },
+    { path: 'reports/daybook', component: DayBookComponent },
+    { path: 'reports/purchase', component: PurchaseComponent },
+    { path: 'reports/profit-loss', component: ProfitLossComponent },
+    { path: 'reports/all-transactions', component: AllTransactionComponent },
+    { path: 'reports/cash-flow', component: CashFlowComponent },
+    { path: 'reports/TBR', component: TrialBalanceReportComponent },
+    { path: 'reports/allparties', component: AllPartiesComponent },
+    { path: 'reports/stock-summary', component: StockSummaryComponent },
+    { path: 'sParty', component: SpartyComponent },
+    { path: 'tran', component: TransactionComponent },
+    { path: 'print', component: PrintComponent },
+     { path: 'drawer', component: DrawerComponent },
+
+
+
+
 ];

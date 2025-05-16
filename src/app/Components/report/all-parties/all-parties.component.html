@@ -1,0 +1,53 @@
+<div class="container-fluid p-3">
+  <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+    <div class="d-flex align-items-center gap-3 flex-wrap">
+      <label><input type="checkbox" /> Date Filter</label>
+      <select class="form-select" style="width: 200px;">
+        <option selected>All parties</option>
+      </select>
+    </div>
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn btn-outline-secondary"><i class="bi bi-file-earmark-excel"></i> Excel Report</button>
+      <button class="btn btn-outline-secondary"><i class="bi bi-printer"></i> Print</button>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <input class="form-control" type="text" placeholder="Search party name...">
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle text-center">
+      <thead class="table-light">
+        <tr>
+          <th><input type="checkbox"  [(ngModel)]="selectAll" (change)="toggleAllSelection()"/></th>
+          <th>#</th>
+          <th>Party Name</th>
+          <th>Email</th>
+          <th>Phone No.</th>
+          <th>Receivable</th>
+          <th>Payable</th>
+          <th>Credit Limit</th>
+        </tr>
+      </thead>
+      <tbody class="table">
+        <tr *ngFor="let party of partyList; let i = index">
+          <td><input type="checkbox" /></td>
+          <td>{{ i + 1 }}</td>
+          <td>{{ party.name }}</td>
+          <td>{{ party.email || '---' }}</td>
+          <td>{{ party.phone || '---' }}</td>
+          <td class="text-success">₹ {{ party.receivable.toFixed(2) }}</td>
+          <td [class.text-danger]="party.payable > 0">₹ {{ party.payable.toFixed(2) || '0.00' }}</td>
+          <td>---</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-between mt-3">
+    <div class="fw-bold text-success">Total Receivable: ₹ {{ totalReceivable.toFixed(2) }}</div>
+    <div class="fw-bold text-danger">Total Payable: ₹ {{ totalPayable.toFixed(2) }}</div>
+  </div>
+</div>
+

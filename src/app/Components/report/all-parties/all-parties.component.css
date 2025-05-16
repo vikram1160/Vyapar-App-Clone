@@ -1,0 +1,16 @@
+.container-fluid{
+    margin-left: 18%;
+    width: 82%;
+}
+.form-control{
+    width: 30%;
+}
+
+th, td {
+  vertical-align: middle;
+}
+
+.table-responsive {
+  max-height: 70vh;
+  overflow: auto;
+}

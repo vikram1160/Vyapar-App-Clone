@@ -1,0 +1,58 @@
+<div class="container-fluid px-3">
+  <div class="filter-bar d-flex flex-wrap align-items-center gap-3 mb-4">
+    <div class="form-group">
+      <!-- <label>All Categories</label> -->
+      <select class="form-control">
+        <option>All Categories</option>
+        
+      </select>
+    </div>
+    <div class="form-group d-flex align-items-center">
+      <input type="checkbox" id="dateFilter">
+      <label for="dateFilter" class="ms-1">Date filter</label>
+      <input type="date" class="form-control ms-2" [(ngModel)]="selectedDate">
+    </div>
+    <div class="form-group d-flex align-items-center">
+      <input type="checkbox" id="inStockOnly">
+      <label for="inStockOnly" class="ms-1">Show items in stock</label>
+    </div>
+    <div class="ms-auto d-flex gap-2">
+      <button class="btn btn-outline-success"><i class="bi bi-file-earmark-excel"></i></button>
+      <button class="btn btn-outline-secondary"><i class="bi bi-printer"></i></button>
+    </div>
+  </div>
+
+  <h5 class="fw-bold mb-3">STOCK SUMMARY</h5>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle text-center">
+      <thead class="table-light">
+        <tr>
+          <th>#</th>
+          <th>Item Name</th>
+          <th>Sale Price</th>
+          <th>Purchase Price</th>
+          <th>Stock Qty</th>
+          <th>Stock Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of stockData; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.salePrice | currency:'INR' }}</td>
+          <td>{{ item.purchasePrice | currency:'INR' }}</td>
+          <td [ngClass]="{'text-danger': item.stockQty < 0, 'text-success': item.stockQty > 0}">{{ item.stockQty }}</td>
+          <td>{{ item.stockValue | currency:'INR' }}</td>
+        </tr>
+      </tbody>
+      <tfoot class="fw-bold">
+        <tr>
+          <td colspan="4" class="text-end">Total</td>
+          <td class="text-danger">{{ totalQty }}</td>
+          <td>{{ totalValue | currency:'INR' }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
