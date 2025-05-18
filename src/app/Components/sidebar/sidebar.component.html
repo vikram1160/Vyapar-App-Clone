@@ -87,9 +87,15 @@
   </li>
 
   <li class="nav-item dropdown">
-    <a class="nav-link" role="button" routerLink="drawer" (click)="hideReports()">
+    <a class="nav-link" role="button" routerLink="drawer" (click)="hideReports(); opneDrawer()">
       <i class="pi pi-cog" style="font-size: 1rem"></i> Setting
     </a>
+
+
+       <p-drawer header="Settings" [(visible)]="visible" (click)="opneDrawer()" position="full">
+        <app-setting></app-setting>
+      </p-drawer>
+
   </li>
 
 

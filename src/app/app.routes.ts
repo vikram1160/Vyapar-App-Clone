@@ -15,10 +15,8 @@ import { WhatsappMarketingComponent } from './Components/whatsapp-marketing/what
 import { BankAccountComponent } from './Components/Cash-&-Bank/bank-account/bank-account.component';
 import { ReportsComponent } from './Components/reports/reports.component';
 import { PlansComponent } from './Components/plans/plans.component';
-import { SaleComponent } from './Components/Sale/sale.component';
 import { SyncShareComponent } from './Components/Sync_&_Share/sync-share/sync-share.component';
 import { UserActivityTableComponent } from './Components/Sync_&_Share/user-activity-table/user-activity-table.component';
-import { SpartyComponent } from './Components/Settings/sparty/sparty.component';
 import { SaleOrderComponent } from './Components/Sale/sale-order/sale-order.component';
 import { DayBookComponent } from './Components/report/day-book/day-book.component';
 import { PurchaseComponent } from './Components/report/purchase/purchase.component';
@@ -28,9 +26,7 @@ import { CashFlowComponent } from './Components/report/cash-flow/cash-flow.compo
 import { TrialBalanceReportComponent } from './Components/report/trial-balance-report/trial-balance-report.component';
 import { AllPartiesComponent } from './Components/report/all-parties/all-parties.component';
 import { StockSummaryComponent } from './Components/report/stock-summary/stock-summary.component';
-import { TransactionComponent } from './Components/Settings/transaction/transaction.component';
-import { PrintComponent } from './Components/Settings/print/print.component';
-import { DrawerComponent } from './Components/Settings/drawer/drawer.component';
+import { SaleComponent } from './Components/Sale/sale/sale.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -50,7 +46,7 @@ export const routes: Routes = [
     { path: 'Whatsapp', component: WhatsappMarketingComponent },
     { path: 'bank-ac', component: BankAccountComponent },
     { path: 'plans', component: PlansComponent },
-    { path: 'reports/sale', component: SaleComponent },
+    { path: 'reports/sale', component: SaleComponent},
     { path: 'share', component: SyncShareComponent },
     { path: 'userActivity', component: UserActivityTableComponent },
     { path: 'sale-order', component: SaleOrderComponent },
@@ -62,11 +58,6 @@ export const routes: Routes = [
     { path: 'reports/TBR', component: TrialBalanceReportComponent },
     { path: 'reports/allparties', component: AllPartiesComponent },
     { path: 'reports/stock-summary', component: StockSummaryComponent },
-    { path: 'sParty', component: SpartyComponent },
-    { path: 'tran', component: TransactionComponent },
-    { path: 'print', component: PrintComponent },
-     { path: 'drawer', component: DrawerComponent },
-
 
 
 
