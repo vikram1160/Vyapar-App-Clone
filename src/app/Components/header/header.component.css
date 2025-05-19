@@ -1,10 +1,38 @@
-.nav a {
-    color: white !important;
-    font-weight: bold; 
+.navbar {
+  width: 100%;
+  padding: 0.75rem 1rem;
+}
+
+.navbar .btn {
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+}
+
+
+.navbar .btn i {
+  margin-right: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .navbar .container-fluid {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
- 
-   a{
-    border-radius: 120px;
-   }
-   
+  .navbar .ms-auto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .navbar .btn {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+}

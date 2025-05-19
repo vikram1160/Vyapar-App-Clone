@@ -27,6 +27,7 @@ import { TrialBalanceReportComponent } from './Components/report/trial-balance-r
 import { AllPartiesComponent } from './Components/report/all-parties/all-parties.component';
 import { StockSummaryComponent } from './Components/report/stock-summary/stock-summary.component';
 import { SaleComponent } from './Components/Sale/sale/sale.component';
+import { CashInHandComponent } from './Components/Cash-&-Bank/cash-in-hand/cash-in-hand.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -58,6 +59,8 @@ export const routes: Routes = [
     { path: 'reports/TBR', component: TrialBalanceReportComponent },
     { path: 'reports/allparties', component: AllPartiesComponent },
     { path: 'reports/stock-summary', component: StockSummaryComponent },
+    { path: 'cash-in-hand', component: CashInHandComponent },
+    
 
 
 

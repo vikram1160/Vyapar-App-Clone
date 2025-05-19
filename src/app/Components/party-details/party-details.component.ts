@@ -8,13 +8,14 @@ import { ButtonModule } from 'primeng/button';
 import { InputGroup, InputGroupModule,  } from 'primeng/inputgroup';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 
 
 @Component({
   selector: 'app-party-details',
   standalone: true,
-  imports: [RouterLink,TableModule,CommonModule,Tooltip,DialogModule,ButtonModule,InputGroupModule,FormsModule,InputTextModule,CommonModule],
+  imports: [RouterLink,TableModule,CommonModule,Tooltip,DialogModule,ButtonModule,InputGroupModule,FormsModule,InputTextModule,CommonModule,InputSwitchModule],
   templateUrl: './party-details.component.html',
   styleUrl: './party-details.component.css'
 })

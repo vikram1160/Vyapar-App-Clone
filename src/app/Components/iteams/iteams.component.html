@@ -1,83 +1,83 @@
 <div class="card">
   <p-tabView class="tabview">
     <p-tabPanel header="PRODUCTS">
-        <div class="row">
-          <div class="col-3 add-party">
-           <div class="responsive-container">
-  <i class="pi pi-search icon"></i>
-  <button routerLink="/add-party" class="add-party-btn">Add Party</button>
-  <i class="pi pi-ellipsis-v icon" (click)="showDialog()" tooltipPosition="right"></i>
-</div>
-
-            <p-dialog [closable]="false" class="dialog" [(visible)]="visible" [style]="{ width: '13rem' }">
-              <div class="row row-dial">
-                <span (click)="visible = false">Bulk Inactive</span>
-                <span (click)="visible = false">Bulk Active</span>
-                <span (click)="visible = false">Bulk Assings Code </span>
-                <span (click)="visible = false">Assings Unit </span>
-              </div>
-            </p-dialog>
-
-            <div class="main">
-              <div class="PARTY">
-                ITEM <br> <br>
-
-                Mouse <br> <br>
-
-                keyboard
-              </div>
-              <div class="AMOUNT">
-                QUANTITY <br> <br>
-
-                8 <br> <br>
-
-                5
-              </div>
-            </div>
+      <div class="row">
+        <div class="col-3 add-party">
+          <div class="responsive-container">
+            <i class="pi pi-search icon"></i>
+            <button routerLink="/add-party" class="add-party-btn">Add Party</button>
+            <i class="pi pi-ellipsis-v icon" (click)="showDialog()" tooltipPosition="right"></i>
           </div>
-          <div class="col-9">
-            <div class="row ADMIN-ROW">
-              <div class="col-8">
-                <!-- <i class="pi pi-send "></i> <br> -->
-                <label>SALE PRICE:₹ 0.00 (excl) </label> <br>
-                <label>PURCHASE PRICE: ₹ 0.00 (excl) </label> <br>
 
-              </div>
-              <div class="col-4">
-                <label>STOCK QUANTITY : -9</label> <br>
-                <label>STOCK VALUE : ₹ 0.00 </label> <br>
-              </div>
+          <p-dialog [closable]="false" class="dialog" [(visible)]="visible" [style]="{ width: '13rem' }">
+            <div class="row row-dial">
+              <span (click)="visible = false">Bulk Inactive</span>
+              <span (click)="visible = false">Bulk Active</span>
+              <span (click)="visible = false">Bulk Assings Code </span>
+              <span (click)="visible = false">Assings Unit </span>
             </div>
-            <div class="row TRANSACATIONS-ROW">
-              <div class="row">
-                TRANSACATIONS <input type="text" placeholder="Search" />
-              </div>
+          </p-dialog>
 
-              <div class="card">
-                <p-table [value]="products" [tableStyle]="{ 'min-width': '40rem' }">
-                  <ng-template >
-                    <tr>
-                      <th>Type</th>
-                      <th>Number</th>
-                      <th>Date</th>
-                      <th>Total</th>
-                      <th>Balance</th>
-                    </tr>
-                  </ng-template>
-                  <ng-template #body let-product>
-                    <tr>
-                      <td>{{ product.type }}</td>
-                      <td>{{ product.number }}</td>
-                      <td>{{ product.date }}</td>
-                      <td>{{ product.total }}</td>
-                      <td>{{ product.balance }}</td>
-                    </tr>
-                  </ng-template>
-                </p-table>
-              </div>
+          <div class="main">
+            <div class="PARTY">
+              ITEM <br> <br>
+
+              Mouse <br> <br>
+
+              keyboard
+            </div>
+            <div class="AMOUNT">
+              QUANTITY <br> <br>
+
+              8 <br> <br>
+
+              5
             </div>
           </div>
         </div>
+        <div class="col-9">
+          <div class="row ADMIN-ROW">
+            <div class="col-8">
+              <!-- <i class="pi pi-send "></i> <br> -->
+              <label>SALE PRICE:₹ 0.00 (excl) </label> <br>
+              <label>PURCHASE PRICE: ₹ 0.00 (excl) </label> <br>
+
+            </div>
+            <div class="col-4">
+              <label>STOCK QUANTITY : -9</label> <br>
+              <label>STOCK VALUE : ₹ 0.00 </label> <br>
+            </div>
+          </div>
+          <div class="row TRANSACATIONS-ROW">
+            <div class="row">
+              TRANSACATIONS <input type="text" placeholder="Search" />
+            </div>
+
+            <div class="card">
+              <p-table [value]="products" [tableStyle]="{ 'min-width': '40rem' }">
+                <ng-template>
+                  <tr>
+                    <th>Type</th>
+                    <th>Number</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Balance</th>
+                  </tr>
+                </ng-template>
+                <ng-template #body let-product>
+                  <tr>
+                    <td>{{ product.type }}</td>
+                    <td>{{ product.number }}</td>
+                    <td>{{ product.date }}</td>
+                    <td>{{ product.total }}</td>
+                    <td>{{ product.balance }}</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </p-tabPanel>
     <p-tabPanel header="SERVICES">
@@ -91,55 +91,55 @@
     </p-tabPanel>
     <p-tabPanel header="CATEGORY">
       <div class="container-fluid p-0">
-  <div class="row no-gutters">
-    <!-- Left Sidebar -->
-    <div class="col-12 col-md-3 sidebar p-2">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <button class="btn btn-warning w-100 fw-bold">
-          <i class="bi bi-plus-circle"></i> Add Category
-        </button>
-      </div>
+        <div class="row no-gutters">
+          <!-- Left Sidebar -->
+          <div class="col-12 col-md-3 sidebar p-2">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <button class="btn btn-warning w-100 fw-bold">
+                <i class="bi bi-plus-circle"></i> Add Category
+              </button>
+            </div>
 
-      <div class="list-group">
-        <div class="list-group-item d-flex justify-content-between align-items-center active">
-          Items not in any Category
-          <span class="badge bg-light text-dark">10</span>
+            <div class="list-group">
+              <div class="list-group-item d-flex justify-content-between align-items-center active">
+                Items not in any Category
+                <span class="badge bg-light text-dark">10</span>
+              </div>
+              <div class="list-group-item d-flex justify-content-between align-items-center">
+                5
+                <span class="badge bg-secondary text-light">1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="col-12 col-md-9 content p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+              <h5 class="mb-2 mb-md-0">Items Not in Any Category</h5>
+              <button class="btn btn-primary">Move To This Category</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Stock Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of items">
+                    <td>{{ item.name }}</td>
+                    <td [class.text-danger]="item.quantity < 0">{{ item.quantity }}</td>
+                    <td [class.text-success]="item.value > 0">₹ {{ item.value.toFixed(5) }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-        <div class="list-group-item d-flex justify-content-between align-items-center">
-          5
-          <span class="badge bg-secondary text-light">1</span>
-        </div>
       </div>
-    </div>
-
-    <!-- Right Content -->
-    <div class="col-12 col-md-9 content p-3">
-      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-        <h5 class="mb-2 mb-md-0">Items Not in Any Category</h5>
-        <button class="btn btn-primary">Move To This Category</button>
-      </div>
-
-      <div class="table-responsive">
-        <table class="table table-striped table-bordered align-middle">
-          <thead class="table-light">
-            <tr>
-              <th>Name</th>
-              <th>Quantity</th>
-              <th>Stock Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of items">
-              <td>{{ item.name }}</td>
-              <td [class.text-danger]="item.quantity < 0">{{ item.quantity }}</td>
-              <td [class.text-success]="item.value > 0">₹ {{ item.value.toFixed(5) }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
 
     </p-tabPanel>
     <p-tabPanel header="UNITS">

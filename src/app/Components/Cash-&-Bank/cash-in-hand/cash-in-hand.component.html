@@ -1,0 +1,46 @@
+<div class="cash-container container-fluid p-3">
+  <div class="d-flex justify-content-between align-items-center flex-wrap">
+    <h5 class="mb-2 mb-md-0">CASH IN HAND</h5>
+    <h5 class="text-success mb-2 mb-md-0">₹ 8,97,599.000000</h5>
+  </div>
+
+  <div class="transactions-card mt-3 p-3 rounded shadow-sm bg-white">
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+      <h6 class="mb-2 mb-md-0">TRANSACTIONS</h6>
+      <button class="btn btn-primary">
+        <i class="pi pi-sliders-h me-2"></i> Adjust Cash
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover text-nowrap">
+        <thead class="table-light">
+          <tr>
+            <th>TYPE</th>
+            <th>NAME</th>
+            <th>DATE</th>
+            <th>AMOUNT</th>
+            <th class="text-center">ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let txn of transactions" [ngClass]="{'table-active': selectedTxn === txn}">
+            <td>
+              <span class="dot" [ngStyle]="{'background-color': getDotColor(txn.type)}"></span>
+              {{ txn.type }}
+            </td>
+            <td>{{ txn.name }}</td>
+            <td>{{ txn.date | date:'dd/MM/yyyy, hh:mm a' }}</td>
+            <td [ngClass]="{'text-success': txn.amount > 0, 'text-danger': txn.amount < 0}">
+              ₹ {{ txn.amount | number:'1.2-6' }}
+            </td>
+            <td class="text-center">
+              <i class="pi pi-ellipsis-v"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

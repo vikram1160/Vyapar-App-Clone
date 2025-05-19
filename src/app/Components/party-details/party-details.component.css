@@ -1,7 +1,7 @@
 .row{
     margin-top: 10px;
     margin-left: 10px;
-    /* border: 1px solid black; */
+   /* height: 100%; */
 }
 .main{
     display: flex;
@@ -19,10 +19,11 @@
     margin-left: 20px;
 }
 .add-party{
-    border: 1px solid black;
-    height: 470px;
+    /* border: 1px solid black; */
+    height: 100% !important;
+    width: 26%;
     border-radius: 10px;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .add-party-btn{
@@ -50,8 +51,10 @@ label:hover{
     background-color: #ebecec;
 }
 .col-9{
-    border: 1px solid black;
-    border-radius: 12px;
+    /* border: 1px solid black; */
+    /* border-radius: 12px; */
+    height: 100%;
+    width: 74%;
     
 }
 /* .party-details{

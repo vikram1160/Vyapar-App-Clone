@@ -24,6 +24,12 @@
   cursor: pointer;
 }
 
+.p-tablist-tab-list{
+display: flex;
+position :absolute;
+justify-content: space-around !important;
+}
+
 
 @media (max-width: 400px) {
   .responsive-container {

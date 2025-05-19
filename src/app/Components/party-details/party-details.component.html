@@ -2,34 +2,31 @@
     <div class="row">
         <div class="col-3 add-party">
             <i class="pi pi-search"></i><button   routerLink='/add-party' class="add-party-btn">Add Party</button>    <i class="pi pi-ellipsis-v" (click)="showDialog()" pTooltip="Manage Parties Active/Inactive" tooltipPosition="right"></i>
-            <p-dialog header="Manage Parties Active / Inactive" [modal]="true" [(visible)]="visible" [style]="{ width: '39rem' }">
-                <div class="row">
-                
-                      <!-- <i class="pi pi-search"></i> -->
-                    <input type="text" pInputText placeholder="Search..." />
-              
-                  </div>
-              <div class="row">
-                <div class="col-4">PARTIES
-                    <br>
-                    <br>
-                    Laptop Shop 
-                </div>
-                <div class="col-4">PHONE NO
-                    <br>
-                    <br>
-                  7887907564
-                </div>
-                <div class="col-4">PARTY ACTIVE STATUS
-                    <br>
-                    <br>
-                </div>
-              </div>
-                <div class="flex justify-end gap-2">
-                    <!-- <p-button label="Cancel" severity="secondary" (click)="visible = false" /> -->
-                    <p-button class="save-change" label="Save Change" (click)="visible = false" />
-                </div>
-            </p-dialog>
+    <p-dialog
+        header="Manage Parties Active / Inactive"
+        [modal]="true"
+        [(visible)]="visible"
+        [style]="{ width: '100%', maxWidth: '39rem' }"
+      >
+        <div class="mb-3">
+          <input type="text" pInputText placeholder="Search..." class="w-100" />
+        </div>
+        <div class="row fw-bold text-center mb-2">
+          <div class="col-4">PARTIES</div>
+          <div class="col-4">PHONE NO</div>
+          <div class="col-4">PARTY STATUS</div>
+        </div>
+        <div class="row text-center mb-3">
+          <div class="col-4">Laptop Shop</div>
+          <div class="col-4">7887907564</div>
+          <div class="col-4">
+            <p-inputSwitch></p-inputSwitch>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <p-button class="p-button-sm" label="Save Change" (click)="visible = false"></p-button>
+        </div>
+      </p-dialog>
             
             <div class="main">
                 <div class="PARTY">
