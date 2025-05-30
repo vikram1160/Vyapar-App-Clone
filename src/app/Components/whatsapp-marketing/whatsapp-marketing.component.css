@@ -12,3 +12,41 @@
 .arrow-btn{
     width: 20%;
 }
+
+/* DIV 3 */
+
+.card-title {
+  font-size: 0.95rem;
+}
+
+.card-text {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+}
+.image-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.image-card:hover {
+  transform: scale(1.02);
+}
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 0.75rem;
+}
+
+

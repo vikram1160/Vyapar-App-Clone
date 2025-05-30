@@ -15,10 +15,24 @@ import { SettingComponent } from '../setting/setting.component';
 })
 export class sidebarComponent {
 
+  showSidebar : boolean =true
+
 
     showReports: boolean = false;
 
  visible: boolean = false;
+
+  isCollapsed = false;
+
+  
+
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+ hideSidebar(){
+ this.showSidebar = !this.showSidebar;
+ }
 
 opneDrawer() {
   this.visible = true

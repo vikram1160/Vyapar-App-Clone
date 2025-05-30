@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {  Router,  } from '@angular/router';
+import { Router, } from '@angular/router';
 
 @Component({
   selector: 'app-add-sale',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './add-sale.component.html',
   styleUrl: './add-sale.component.css'
 })
@@ -16,25 +16,25 @@ export class AddSaleComponent {
   phoneNumber: string = '';
   invoiceNumber: number | undefined;
   i: number = 0;
-  name : string = ' ';
+  name: string = ' ';
   qty: number = 0;
-  unit : string = ' ';
+  unit: string = ' ';
   price: number = 0;
   discount: number = 0;
   tax: number = 0;
 
   invoiceDate: Date = new Date();
   roundOff: number = 0;
-  products:any [] = []
+  products: any[] = []
   item: any;
   transactionType: string = '';
-  paymentType: string = ''; // Added paymentType property
-  amount: number = 0; 
-  balanceDue: number = 0; // Added balanceDue property
+  paymentType: string = ''; 
+  amount: number = 0;
+  balanceDue: number = 0; 
 
-  firstItem: any 
+  firstItem: any
 
-  constructor(private router :Router){}
+  constructor(private router: Router) { }
 
   units = ['NONE', 'KG', 'Litre', 'Piece'];
   taxes = ['5%', '12%', '18%'];
@@ -49,25 +49,25 @@ export class AddSaleComponent {
     let discountAmount = (this.price * this.qty * this.discount) / 100;
     let taxAmount = (this.price * this.qty - discountAmount) / 100
     return this.price * this.qty - discountAmount + taxAmount;
-    
+
   }
 
   calculateTotal(): number {
-    return this.items.reduce((sum, item) => sum + this.calculateAmount(item), 0) + this.roundOff;
+    return this.items.reduce((sum, item) => sum + this.calculateAmount(item), 0)
   }
 
-  
+
 
   saveInvoice() {
     const invoiceId = this.products.length + 1;
-  
+
     const quantity = Number(this.qty) || 0;
     const pricePerUnit = Number(this.price) || 0;
     const discount = Number(this.discount) || 0;
-  
+
     const amount = quantity * pricePerUnit; // ✅ This must come before balanceDue
     const balanceDue = amount - discount;
-  
+
     const invoiceData = {
       id: invoiceId,
       invoice_no: this.invoiceNumber,
@@ -77,9 +77,9 @@ export class AddSaleComponent {
       payment_type: pricePerUnit.toFixed(2),
       amount: amount.toFixed(2),
       balance_due: balanceDue.toFixed(2),
-   
+
     };
-  
+
     if (this.invoiceNumber && this.invoiceDate) {
       this.router.navigate(['/sale-invioces'], {
         queryParams: invoiceData
@@ -87,7 +87,7 @@ export class AddSaleComponent {
     } else {
       alert("Please fill in the Invoice No and Date");
     }
-  
+
     console.log('Invoice Saved:', {
       id: invoiceId,
       qty: quantity,
@@ -96,16 +96,13 @@ export class AddSaleComponent {
       totalAmount: balanceDue,
     });
   }
-  
-  
+
   // amount = (this.qty * this.price) - this.discount;
-
-
 
 
   // saveInvoice() {
   //   const invoiceId = this.products.length + 1;
-  
+
   //   const invoiceData = {
   //     id: invoiceId,
   //     invoice_no: this.invoiceNumber,
@@ -117,17 +114,17 @@ export class AddSaleComponent {
   //     item_discount: this.item.discount || '',
   //     items: JSON.stringify(this.items) // Only if you need this for something else
   //   };
-  
+
   //   this.router.navigate(['/sale-invioces'], {
   //     queryParams: invoiceData
   //   });
-  
+
   //   console.log('Invoice Saved:', {
   //     id: invoiceId,
   //     invoiceNumber: this.invoiceNumber,
   //     items: this.items
   //   });
   // }
-  
-  
+
+
 }

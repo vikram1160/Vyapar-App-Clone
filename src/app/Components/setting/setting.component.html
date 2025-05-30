@@ -1,493 +1,474 @@
 <div class="sidebar">
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a class="nav-link" (click)="onGeneralClick()" >GENERAL</a>
+      <a class="nav-link" (click)="onGeneralClick()">GENERAL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link"(click)="onTransactionClick()">TRANSACTION</a>
+      <a class="nav-link" (click)="onTransactionClick()">TRANSACTION</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="onPrintClick()" >PRINT</a>
+      <a class="nav-link" (click)="onPrintClick()">PRINT</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" (click)="onPartyClick()">PARTY</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link"(click)="onItemClick()" >ITEM</a>
+      <a class="nav-link" (click)="onItemClick()">ITEM</a>
     </li>
   </ul>
 </div>
 
 <!-- Div 1 Start -->
- <!-- Div 1 Start -->
-   <!-- Div 1 Start -->
+<!-- Div 1 Start -->
+<!-- Div 1 Start -->
 
 
 <div class="status">
-  <div class="component" *ngIf="isGeneralClicked"> <div class="container-fluid p-3">
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Application</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="passcode">
-            <label class="form-check-label" for="passcode">Enable Passcode</label>
-          </div>
+  <div class="component" *ngIf="isGeneralClicked">
+    <div class="container-fluid p-3">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Application</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="passcode">
+                <label class="form-check-label" for="passcode">Enable Passcode</label>
+              </div>
 
-          <div class="mt-3">
-            <label>Business Currency</label>
-            <select class="form-select">
-              <option>₹</option>
-              <option>$</option>
-              <option>€</option>
-            </select>
-          </div>
+              <div class="mt-3">
+                <label>Business Currency</label>
+                <select class="form-select">
+                  <option>₹</option>
+                  <option>$</option>
+                  <option>€</option>
+                </select>
+              </div>
 
-          <div class="mt-3">
-            <label>Amount (upto Decimal Places)</label>
-            <div class="input-group">
-              <input type="number" class="form-control" value="5">
-              <span class="input-group-text">.00000</span>
+              <div class="mt-3">
+                <label>Amount (upto Decimal Places)</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" value="5">
+                  <span class="input-group-text">.00000</span>
+                </div>
+              </div>
+
+              <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" checked id="gstin">
+                <label class="form-check-label" for="gstin">GSTIN Number</label>
+              </div>
+
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" id="negativestock">
+                <label class="form-check-label" for="negativestock">Stop Sale on Negative Stock</label>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="form-check mt-3">
-            <input class="form-check-input" type="checkbox" checked id="gstin">
-            <label class="form-check-label" for="gstin">GSTIN Number</label>
-          </div>
 
-          <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" id="negativestock">
-            <label class="form-check-label" for="negativestock">Stop Sale on Negative Stock</label>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0">Multi Firm</h5>
+                <!-- <a href="#" class="text-primary">+ Add Firm</a> -->
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="firm" checked>
+                <label class="form-check-label">LAPTOP HUB <span class="text-muted">(DEFAULT)</span></label>
+                <button class="btn btn-link btn-sm p-0"></button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-  
-    <div class="col-md-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="card-title mb-0">Multi Firm</h5>
-            <a href="#" class="text-primary">+ Add Firm</a>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="firm" checked>
-            <label class="form-check-label">LAPTOP HUB <span class="text-muted">(DEFAULT)</span></label>
-            <button class="btn btn-link btn-sm p-0"><i class="bi bi-pencil"></i></button>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Backup & History</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="autobackup">
+                <label class="form-check-label" for="autobackup">Auto Backup</label>
+              </div>
+              <p class="mt-2 text-muted">Last Backup 29/03/2025 | 12:03 AM</p>
+
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" checked id="audit">
+                <label class="form-check-label" for="audit">Audit Trail</label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Backup & History</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="autobackup">
-            <label class="form-check-label" for="autobackup">Auto Backup</label>
-          </div>
-          <p class="mt-2 text-muted">Last Backup 29/03/2025 | 12:03 AM</p>
 
-          <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" checked id="audit">
-            <label class="form-check-label" for="audit">Audit Trail</label>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">More Transactions</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" checked id="estimate">
+                <label class="form-check-label" for="estimate">Estimate/Quotation</label>
+              </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" checked id="order">
+                <label class="form-check-label" for="order">Sale/Purchase Order</label>
+              </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" id="income">
+                <label class="form-check-label" for="income">Other Income</label>
+              </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" id="fa">
+                <label class="form-check-label" for="fa">Fixed Assets (FA)</label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-
-    <div class="col-md-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">More Transactions</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" checked id="estimate">
-            <label class="form-check-label" for="estimate">Estimate/Quotation</label>
-          </div>
-          <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" checked id="order">
-            <label class="form-check-label" for="order">Sale/Purchase Order</label>
-          </div>
-          <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" id="income">
-            <label class="form-check-label" for="income">Other Income</label>
-          </div>
-          <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" id="fa">
-            <label class="form-check-label" for="fa">Fixed Assets (FA)</label>
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Stock Transfer Between Godowns</h5>
+              <p class="small text-muted">Manage all your stores/godowns and transfer stock seamlessly between them.</p>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="godown">
+                <label class="form-check-label" for="godown">Godown management & Stock transfer</label>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Stock Transfer Between Godowns</h5>
-          <p class="small text-muted">Manage all your stores/godowns and transfer stock seamlessly between them.</p>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="godown">
-            <label class="form-check-label" for="godown">Godown management & Stock transfer</label>
+
+        <div class="col-md-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Customize Your View</h5>
+              <p class="small text-muted">Choose Your Screen Zoom/Scale</p>
+              <input type="range" class="form-range" min="70" max="130" step="10" value="115">
+              <button class="btn btn-primary btn-sm mt-2">Apply</button>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="col-md-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">Customize Your View</h5>
-          <p class="small text-muted">Choose Your Screen Zoom/Scale</p>
-          <input type="range" class="form-range" min="70" max="130" step="10" value="115">
-          <button class="btn btn-primary btn-sm mt-2">Apply</button>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 
-<!-- Div 2 Start -->
- <!-- Div 2 Start -->
+  <!-- Div 2 Start -->
+  <!-- Div 2 Start -->
   <!-- Div 2 Start -->
 
   <div class="component" *ngIf="isTransactionClicked">
-<div class="container-fluid px-3 py-4 settings-wrapper">
-  <div class="row gy-4">
-
-    <!-- Transaction Header -->
-    <div class="col-12 col-md-4">
-      <h5>Transaction Header</h5>
-      <hr />
-      <div class="form-check" *ngFor="let header of transactionHeader">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="header.checked" />
-        <label class="form-check-label">{{ header.label }}</label>
-      </div>
-    </div>
-
-    <!-- Items Table -->
-    <div class="col-12 col-md-4">
-      <h5>Items Table</h5>
-      <hr />
-      <div class="form-check" *ngFor="let item of itemsTable">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="item.checked" />
-        <label class="form-check-label">{{ item.label }}</label>
-      </div>
-    </div>
-
-    <!-- Taxes, Discounts & Totals -->
-    <div class="col-12 col-md-4">
-      <h5>Taxes, Discount & Totals</h5>
-      <hr />
-      <div class="form-check" *ngFor="let tax of taxesDiscounts">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="tax.checked" />
-        <label class="form-check-label">{{ tax.label }}</label>
-      </div>
-
-      <div class="d-flex align-items-center mt-2">
-        <label class="me-2">Nearest</label>
-        <select class="form-select w-auto me-2" [(ngModel)]="roundNearest">
-          <option *ngFor="let option of nearestOptions" [value]="option">{{ option }}</option>
-        </select>
-        <label class="me-2">To</label>
-        <select class="form-select w-auto" [(ngModel)]="roundTo">
-          <option *ngFor="let option of roundToOptions" [value]="option">{{ option }}</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- More Transaction Features -->
-    <div class="col-12 col-md-4">
-      <h5>More Transaction Features</h5>
-      <hr />
-      <div class="form-check" *ngFor="let feature of moreFeatures">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="feature.checked" />
-        <label class="form-check-label">{{ feature.label }}</label>
-      </div>
-    </div>
-
-    <!-- Transaction Prefixes -->
-    <div class="col-12 col-md-8">
-      <h5>Transaction Prefixes</h5>
-      <hr />
-      <div class="mb-2">
-        <label class="form-label fw-bold">Firm</label>
-        <input class="form-control w-auto" type="text" [(ngModel)]="firm" disabled />
-      </div>
-      <div class="row g-2">
-        <div class="col-6 col-md-4" *ngFor="let prefix of transactionPrefixes">
-          <label class="form-label">{{ prefix.label }}</label>
-          <select class="form-select" [(ngModel)]="prefix.value">
-            <option value="None">None</option>
-            <option *ngFor="let opt of prefixOptions" [value]="opt">{{ opt }}</option>
-          </select>
+    <div class="container-fluid px-3 py-4 settings-wrapper">
+      <div class="row gy-4">
+        <div class="col-12 col-md-4">
+          <h5>Transaction Header</h5>
+          <hr />
+          <div class="form-check" *ngFor="let header of transactionHeader">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="header.checked" />
+            <label class="form-check-label">{{ header.label }}</label>
+          </div>
         </div>
+
+        <div class="col-12 col-md-4">
+          <h5>Items Table</h5>
+          <hr />
+          <div class="form-check" *ngFor="let item of itemsTable">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="item.checked" />
+            <label class="form-check-label">{{ item.label }}</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h5>Taxes, Discount & Totals</h5>
+          <hr />
+          <div class="form-check" *ngFor="let tax of taxesDiscounts">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="tax.checked" />
+            <label class="form-check-label">{{ tax.label }}</label>
+          </div>
+
+          <div class="d-flex align-items-center mt-2">
+            <label class="me-2">Nearest</label>
+            <select class="form-select w-auto me-2" [(ngModel)]="roundNearest">
+              <option *ngFor="let option of nearestOptions" [value]="option">{{ option }}</option>
+            </select>
+            <label class="me-2">To</label>
+            <select class="form-select w-auto" [(ngModel)]="roundTo">
+              <option *ngFor="let option of roundToOptions" [value]="option">{{ option }}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h5>More Transaction Features</h5>
+          <hr />
+          <div class="form-check" *ngFor="let feature of moreFeatures">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="feature.checked" />
+            <label class="form-check-label">{{ feature.label }}</label>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8">
+          <h5>Transaction Prefixes</h5>
+          <hr />
+          <div class="mb-2">
+            <label class="form-label fw-bold">Firm</label>
+            <input class="form-control w-auto" type="text" [(ngModel)]="firm" disabled />
+          </div>
+          <div class="row g-2">
+            <div class="col-6 col-md-4" *ngFor="let prefix of transactionPrefixes">
+              <label class="form-label">{{ prefix.label }}</label>
+              <select class="form-select" [(ngModel)]="prefix.value">
+                <option value="None">None</option>
+                <option *ngFor="let opt of prefixOptions" [value]="opt">{{ opt }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-  </div>
-</div>
-
 
   </div>
 
 
-   <!-- Div 3 Start -->
-     <!-- Div 3 Start -->
-         <!-- Div 3 Start -->
+  <!-- Div 3 Start -->
+  <!-- Div 3 Start -->
+  <!-- Div 3 Start -->
 
 
   <div class="component" *ngIf="isPrintClicked">
 
     <div class="settings-container d-flex flex-column flex-lg-row">
-  <div class="sidebar-settings p-3 border-end">
-    <div class="tabs">
-      <button class="tab-btn active">Regular Printer</button>
-      <button class="tab-btn">Thermal Printer</button>
-    </div>
-
-    <div class="layout-controls mt-3">
-      <button class="btn btn-outline-primary btn-sm me-2">Change Layout</button>
-      <button class="btn btn-outline-secondary btn-sm">Change Colors</button>
-    </div>
-
-    <div class="layout-options d-flex flex-wrap gap-2 my-3">
-      <img src="assets/layout1.png" alt="Layout 1" class="layout-thumb" />
-      <img src="assets/layout2.png" alt="Layout 2" class="layout-thumb" />
-      <img src="assets/layout3.png" alt="Layout 3" class="layout-thumb active" />
-    </div>
-
-    <form>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" checked />
-        <label class="form-check-label">Make Regular Printer Default</label>
-      </div>
-
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" checked />
-        <label class="form-check-label">Print repeat header in all pages</label>
-      </div>
-
-      <div class="form-group mt-3">
-        <label>Company Name</label>
-        <input type="text" class="form-control" value="LAPTOP HUB" />
-      </div>
-
-      <div class="form-check mt-2">
-        <input class="form-check-input" type="checkbox" checked />
-        <label class="form-check-label">Company Logo <a href="#">(Change)</a></label>
-      </div>
-
-      <div class="form-group mt-2">
-        <label>Address</label>
-        <input type="text" class="form-control" value="pune" />
-      </div>
-
-      <div class="form-group mt-2">
-        <label>Email</label>
-        <input type="email" class="form-control" value="vikramamdlab@gmail.com" />
-      </div>
-
-      <div class="form-group mt-2">
-        <label>Phone</label>
-        <input type="text" class="form-control" value="7887589262" />
-      </div>
-
-      <div class="form-check mt-2">
-        <input class="form-check-input" type="checkbox" checked />
-        <label class="form-check-label">GSTIN on Sale</label>
-      </div>
-
-      <div class="d-flex mt-3 gap-2">
-        <div>
-          <label>Paper Size</label>
-          <select class="form-select">
-            <option>A4</option>
-            <option>A5</option>
-          </select>
+      <div class="sidebar-settings p-3 border-end">
+        <div class="tabs">
+          <button class="tab-btn active">Regular Printer</button>
+          <button class="tab-btn">Thermal Printer</button>
         </div>
 
-        <div>
-          <label>Orientation</label>
-          <select class="form-select">
-            <option>Portrait</option>
-            <option>Landscape</option>
-          </select>
+        <div class="layout-controls mt-3">
+          <button class="btn btn-outline-primary btn-sm me-2">Change Layout</button>
+          <button class="btn btn-outline-secondary btn-sm">Change Colors</button>
         </div>
+
+        <div class="layout-options d-flex flex-wrap gap-2 my-3">
+          <img src="assets/layout1.png" alt="Layout 1" class="layout-thumb" />
+          <img src="assets/layout2.png" alt="Layout 2" class="layout-thumb" />
+          <img src="assets/layout3.png" alt="Layout 3" class="layout-thumb active" />
+        </div>
+
+        <form>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" checked />
+            <label class="form-check-label">Make Regular Printer Default</label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" checked />
+            <label class="form-check-label">Print repeat header in all pages</label>
+          </div>
+
+          <div class="form-group mt-3">
+            <label>Company Name</label>
+            <input type="text" class="form-control" value="LAPTOP HUB" />
+          </div>
+
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" checked />
+            <label class="form-check-label">Company Logo <a href="#">(Change)</a></label>
+          </div>
+
+          <div class="form-group mt-2">
+            <label>Address</label>
+            <input type="text" class="form-control" value="pune" />
+          </div>
+
+          <div class="form-group mt-2">
+            <label>Email</label>
+            <input type="email" class="form-control" value="vikramamdlab@gmail.com" />
+          </div>
+
+          <div class="form-group mt-2">
+            <label>Phone</label>
+            <input type="text" class="form-control" value="7887589262" />
+          </div>
+
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" checked />
+            <label class="form-check-label">GSTIN on Sale</label>
+          </div>
+
+          <div class="d-flex mt-3 gap-2">
+            <div>
+              <label>Paper Size</label>
+              <select class="form-select">
+                <option>A4</option>
+                <option>A5</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Orientation</label>
+              <select class="form-select">
+                <option>Portrait</option>
+                <option>Landscape</option>
+              </select>
+            </div>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
 
-  <div class="invoice-preview p-3 flex-grow-1">
-    <img src="assets/invoice-sample.png" alt="Invoice Preview" class="img-fluid w-100" />
-  </div>
-</div>
+      <div class="invoice-preview p-3 flex-grow-1">
+        <img src="assets/invoice-sample.png" alt="Invoice Preview" class="img-fluid w-100" />
+      </div>
+    </div>
 
-  </div>  
+  </div>
 </div>
 
 <!-- Div 4 -->
- <!-- Div 4 -->
-  <!-- Div 4 -->
-   <!-- Div 4 -->
+<!-- Div 4 -->
+<!-- Div 4 -->
+<!-- Div 4 -->
 
- <div class="component" *ngIf="isPartyClicked">
+<div class="component" *ngIf="isPartyClicked">
   <div class="container-fluid p-3">
-  <div class="row gy-4">
+    <div class="row gy-4">
 
-    <div class="col-12 col-lg-4">
-      <h5 class="section-title">Party Settings</h5>
-      <div class="form-check mb-2" *ngFor="let setting of partySettings">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="setting.checked" />
-        <label class="form-check-label">
-          {{ setting.label }}
-          <i class="bi bi-info-circle ms-1"></i>
-        </label>
-      </div>
-
-      <div class="d-flex align-items-center mb-2">
-        <label class="me-2">Remind me for payment due in</label>
-        <input type="number" class="form-control form-control-sm w-auto" [(ngModel)]="reminderDays" min="1" />
-        <span class="ms-2">(days)</span>
-      </div>
-
-      <button class="btn btn-link p-0">Reminder Message ></button>
-    </div>
-
-    <div class="col-12 col-lg-4">
-      <h5 class="section-title">Additional fields <i class="bi bi-info-circle"></i></h5>
-
-      <div *ngFor="let field of partyAdditionalFields; let i = index" class="mb-3">
-        <div class="d-flex align-items-center">
-          <input type="checkbox" class="form-check-input me-2" [(ngModel)]="field.enabled" />
-          <input
-            type="text"
-            class="form-control"
-            [placeholder]="'Additional Field ' + (i + 1)"
-            [(ngModel)]="field.value"
-            [disabled]="!field.enabled"
-          />
-          <input
-            *ngIf="field.hasDate"
-            type="date"
-            class="form-control ms-2"
-            [(ngModel)]="field.date"
-            [disabled]="!field.enabled"
-          />
+      <div class="col-12 col-lg-4">
+        <h5 class="section-title">Party Settings</h5>
+        <div class="form-check mb-2" *ngFor="let setting of partySettings">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="setting.checked" />
+          <label class="form-check-label">
+            {{ setting.label }}
+            <i class="bi bi-info-circle ms-1"></i>
+          </label>
         </div>
-        <div class="form-check form-switch mt-1">
-          <input class="form-check-input" type="checkbox" [(ngModel)]="field.showInPrint" />
-          <label class="form-check-label">Show In Print</label>
+
+        <div class="d-flex align-items-center mb-2">
+          <label class="me-2">Remind me for payment due in</label>
+          <input type="number" class="form-control form-control-sm w-auto" [(ngModel)]="reminderDays" min="1" />
+          <span class="ms-2">(days)</span>
+        </div>
+
+        <!-- <button class="btn btn-link p-0">Reminder Message ></button> -->
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <h5 class="section-title">Additional fields <i class="bi bi-info-circle"></i></h5>
+
+        <div *ngFor="let field of partyAdditionalFields; let i = index" class="mb-3">
+          <div class="d-flex align-items-center">
+            <input type="checkbox" class="form-check-input me-2" [(ngModel)]="field.enabled" />
+            <input type="text" class="form-control" [placeholder]="'Additional Field ' + (i + 1)"
+              [(ngModel)]="field.value" [disabled]="!field.enabled" />
+            <input *ngIf="field.hasDate" type="date" class="form-control ms-2" [(ngModel)]="field.date"
+              [disabled]="!field.enabled" />
+          </div>
+          <div class="form-check form-switch mt-1">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="field.showInPrint" />
+            <label class="form-check-label">Show In Print</label>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Loyalty Point -->
-    <div class="col-12 col-lg-4">
-      <h5 class="section-title">Enable Loyalty Point</h5>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="loyaltyPointEnabled" />
-        <label class="form-check-label">
-          Enable Loyalty Point <i class="bi bi-info-circle ms-1"></i>
-          <i class="bi bi-gem ms-1 text-primary"></i>
-        </label>
+      <div class="col-12 col-lg-4">
+        <h5 class="section-title">Enable Loyalty Point</h5>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="loyaltyPointEnabled" />
+          <label class="form-check-label">
+            Enable Loyalty Point <i class="bi bi-info-circle ms-1"></i>
+            <!-- <i class="bi bi-gem ms-1 text-primary"></i> -->
+          </label>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
- </div>
-
-
- <!-- Div 5   --> 
-   <!-- Div 5   --> 
-     <!-- Div 5   --> 
-
-  <div class="component" *ngIf="isItemClicked">
-<div class="container-fluid p-3">
-  <div class="row gy-4">
-
-    <div class="col-12 col-lg-4">
-      <h5 class="section-title">Item Settings</h5>
-      <div class="form-check mb-2" *ngFor="let setting of itemSettings">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="setting.checked" />
-        <label class="form-check-label">
-          {{ setting.label }}
-          <i *ngIf="setting.info" class="bi bi-info-circle ms-1"></i>
-          <span *ngIf="setting.locked" class="badge bg-secondary ms-2"><i class="bi bi-lock"></i> Locked</span>
-          <i *ngIf="setting.premium" class="bi bi-gem ms-2 text-primary"></i>
-        </label>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">What do you sell?</label>
-        <select class="form-select form-select-sm w-100" [(ngModel)]="productType">
-          <option value="product">Product/Service</option>
-          <option value="product">Product</option>
-          <option value="service">Service</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="col-12 col-lg-4">
-      <h5 class="section-title">Additional Item Fields <i class="bi bi-gem text-primary"></i></h5>
-
-      
-      <div class="mb-3">
-        <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.mrp.enabled" />
-        <label class="form-label">MRP <i class="bi bi-info-circle ms-1"></i></label>
-        <input type="text" class="form-control" placeholder="MRP" [disabled]="!itemAdditionalFields.mrp.enabled" />
-      </div>
-
-    
-      <div class="mb-3">
-        <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.serial.enabled" />
-        <label class="form-label">Serial No./ IMEI No. etc</label>
-        <input type="text" class="form-control" placeholder="Serial No." [disabled]="!itemAdditionalFields.serial.enabled" />
-      </div>
-
-  
-      <div class="mb-2">
-        <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.enabled" />
-        <label class="form-label">Batch No.</label>
-        <input type="text" class="form-control" placeholder="Batch No." [disabled]="!itemAdditionalFields.batch.enabled" />
-      </div>
-      <div class="mb-2">
-        <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.expEnabled" />
-        <label class="form-label">Exp Date</label>
-        <input type="month" class="form-control" [disabled]="!itemAdditionalFields.batch.expEnabled" />
-      </div>
-      <div class="mb-2">
-        <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.mfgEnabled" />
-        <label class="form-label">Mfg Date</label>
-        <input type="date" class="form-control" [disabled]="!itemAdditionalFields.batch.mfgEnabled" />
-      </div>
-      <div class="mb-2">
-        <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.modelEnabled" />
-        <label class="form-label">Model No.</label>
-        <input type="text" class="form-control" placeholder="Model No." [disabled]="!itemAdditionalFields.batch.modelEnabled" />
-      </div>
-    </div>
-
-  
-    <div class="col-12 col-lg-4">
-      <h5 class="section-title">Item Custom Fields <i class="bi bi-info-circle"></i> <i class="bi bi-gem text-primary"></i></h5>
-      <button class="btn btn-outline-primary">Add Custom Fields ></button>
-    </div>
-  </div>
 </div>
 
 
+<!-- Div 5   -->
+<!-- Div 5   -->
+<!-- Div 5   -->
+
+<div class="component" *ngIf="isItemClicked">
+  <div class="container-fluid p-3">
+    <div class="row gy-4">
+
+      <div class="col-12 col-lg-4">
+        <h5 class="section-title">Item Settings</h5>
+        <div class="form-check mb-2" *ngFor="let setting of itemSettings">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="setting.checked" />
+          <label class="form-check-label">
+            {{ setting.label }}
+            <i *ngIf="setting.info" class="bi bi-info-circle ms-1"></i>
+            <span *ngIf="setting.locked" class="badge bg-secondary ms-2"></span>
+            <!-- <i *ngIf="setting.premium" class="bi bi-gem ms-2 text-primary"></i> -->
+          </label>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">What do you sell?</label>
+          <select class="form-select form-select-sm w-100" [(ngModel)]="productType">
+            <option value="product">Product/Service</option>
+            <option value="product">Product</option>
+            <option value="service">Service</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4">
+        <h5 class="section-title">Additional Item Fields </h5>
+
+
+        <div class="mb-3">
+          <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.mrp.enabled" />
+          <label class="form-label">MRP <i class="bi bi-info-circle ms-1"></i></label>
+          <input type="text" class="form-control" placeholder="MRP" [disabled]="!itemAdditionalFields.mrp.enabled" />
+        </div>
+
+
+        <div class="mb-3">
+          <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.serial.enabled" />
+          <label class="form-label">Serial No./ IMEI No. etc</label>
+          <input type="text" class="form-control" placeholder="Serial No."
+            [disabled]="!itemAdditionalFields.serial.enabled" />
+        </div>
+
+
+        <div class="mb-2">
+          <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.enabled" />
+          <label class="form-label">Batch No.</label>
+          <input type="text" class="form-control" placeholder="Batch No."
+            [disabled]="!itemAdditionalFields.batch.enabled" />
+        </div>
+        <div class="mb-2">
+          <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.expEnabled" />
+          <label class="form-label">Exp Date</label>
+          <input type="month" class="form-control" [disabled]="!itemAdditionalFields.batch.expEnabled" />
+        </div>
+        <div class="mb-2">
+          <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.mfgEnabled" />
+          <label class="form-label">Mfg Date</label>
+          <input type="date" class="form-control" [disabled]="!itemAdditionalFields.batch.mfgEnabled" />
+        </div>
+        <div class="mb-2">
+          <input type="checkbox" class="form-check-input me-2" [(ngModel)]="itemAdditionalFields.batch.modelEnabled" />
+          <label class="form-label">Model No.</label>
+          <input type="text" class="form-control" placeholder="Model No."
+            [disabled]="!itemAdditionalFields.batch.modelEnabled" />
+        </div>
+      </div>
+
+
+      <div class="col-12 col-lg-4">
+        <h5 class="section-title">Item Custom Fields <i class="bi bi-info-circle"></i></h5>
+        <!-- <button class="btn btn-outline-primary">Add Custom Fields ></button> -->
+      </div>
+    </div>
   </div>
 
 
-
-
-
-
+</div>

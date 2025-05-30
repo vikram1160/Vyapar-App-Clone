@@ -81,4 +81,117 @@ cards = [
     },
     
   ];
+
+  // DIV 2 
+    // DIV 2 
+      // DIV 2 
+
+
+  newsCards = [
+    {
+      image: 'assets/news1.jpg',
+      title:
+        'Heavy to extremely heavy rainfall warning issued for <b>14 states</b>',
+      subtitle: 'Assam, Kerala, Goa, TN, etc.'
+    },
+    {
+      image: 'assets/news2.jpg',
+      title: 'IIT Bombay suspends agreements with Turkish universities'
+    },
+    {
+      image: 'assets/news3.jpg',
+      title:
+        'Russia launches war\'s largest drone attack against Ukraine after peace talks'
+    },
+    {
+      image: 'assets/news4.jpg',
+      title:
+        'Lashkar terrorist <b>Saifullah</b>, mastermind of Indian attacks, shot dead in Pak'
+    },
+    {
+      image: 'assets/news5.jpg',
+      title:
+        '2 ex-Jihadists appointed to WH panel by Trump, one trained in LeT camp in Pak'
+    },
+    {
+      image: 'assets/news6.jpg',
+      title:
+        'Indian Army shares new video of attack on Pak military targets under Op Sindoor'
+    },
+    {
+      image: 'assets/news7.jpg',
+      title:
+        'Indian javelin star <b>Neeraj Chopra</b> throws personal best at Doha Diamond League'
+    },
+    {
+      image: 'assets/news8.jpg',
+      title: '800 Gujaratis cancel Turkey trip',
+      subtitle: "Say 'Least we can do for India'"
+    },
+    {
+      image: 'assets/news9.jpg',
+      title:
+        'LINE OF BEGGARS begins where Pakistan stands: <b>Defence Minister</b>'
+    },
+    {
+      image: 'assets/news10.jpg',
+      title: '3 terrorists killed under Operation Nader'
+    }
+  ];
+
+
+
+  // DIV 3  
+    // DIV 3  
+
+quotes = [
+    {
+      title: 'Good Morning',
+      text: 'Each sunrise brings a new chance to grow.',
+      image: 'assets/gm1.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'The world is waiting for your light.',
+      image: 'assets/gm2.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'Every sunrise is a new opportunity to shine.',
+      image: 'assets/gm3.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'What we do today is what matters most.',
+      image: 'assets/gm4.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'Wake up with determination, go to bed with satisfaction.',
+      image: 'assets/gm5.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'Success begins with a single step. Ignite your potential today.',
+      image: 'assets/gm6.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'Let’s make today count together.',
+      image: 'assets/gm7.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'Rise and soar towards your dreams.',
+      image: 'assets/gm8.jpg'
+    },
+    {
+      title: 'Good Morning',
+      text: 'Each sunrise gives a new beginning.',
+      image: 'assets/gm9.jpg'
+    }
+  ];
+
+    
+       
 }

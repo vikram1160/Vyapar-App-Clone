@@ -1,0 +1,77 @@
+/* General Styling */
+.main-div{
+  width: 80%;
+  margin-left: 18%;   
+}
+
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.filter-section > div {
+  flex: 1 1 200px;
+}
+
+input[type="date"],
+input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.view-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.table-section {
+  text-align: center;
+  padding: 2rem;
+  color: gray;
+}
+
+.summary-section {
+  border-top: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.receivable {
+  color: #007f5f;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-section {
+    flex-direction: column;
+  }
+
+  .actions {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}

@@ -1,3 +1,34 @@
+.icon{
+  color: white;
+  font-size: 200%;
+  margin-left: 93%;
+  margin-top: -19%;
+  cursor: pointer !important;
+}
+.toggle-btn{
+margin-left: 89%;
+    border: none;
+    background: none;
+}
+
+.sidebar-expanded {
+  width: 250px;
+  height: 100%;
+  background-color: rgb(39, 34, 53);
+  transition: width 0.3s ease;
+}
+
+.sidebar-collapsed {
+  width: 50px;
+  height: 100%;
+  background-color: rgb(39, 34, 53);
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+a{
+  cursor: pointer;
+}
+
 .nav a {
     color: white !important;
     font-weight: bold; 
@@ -53,4 +84,9 @@
    .class{
     background-color: rgb(166, 188, 216);
    }
+
+
+
+
+  
   

@@ -13,7 +13,7 @@ export class SmartConnectComponent {
 
 
   openWhatsApp() {
-    window.open(this.whatsappMessage, '_blank');
+    window.open(this.whatsappMessage);
   }
   
 }

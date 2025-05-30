@@ -1,7 +1,5 @@
 <div class="contaoner">
     <div class="container-fluid p-3 bg-light border rounded">
-
-  <!-- Filter Section -->
   <div class="d-flex flex-wrap align-items-center gap-3">
     <div class="dropdown">
       <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -70,7 +68,6 @@
             Please try again after making relevant changes.
           </td>
         </tr>
-        <!-- Future: Loop rows here -->
       </tbody>
     </table>
   </div>
@@ -78,3 +75,106 @@
 
 
 </div>
+
+
+
+
+
+
+<!-- part two  -->
+ <!-- part two  -->
+
+
+<!-- <div class="container-fluid p-3 bg-light border rounded">
+
+  
+  <div class="row g-3 align-items-center">
+    <div class="col-12 col-md-auto">
+      <div class="dropdown">
+        <button class="btn btn-outline-primary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+          This Month
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Week</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">Custom</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-auto d-flex align-items-center gap-2">
+      <label class="fw-bold mb-0">Between</label>
+      <p-calendar [(ngModel)]="fromDate" dateFormat="dd/mm/yy" showIcon></p-calendar>
+      <label class="mb-0">To</label>
+      <p-calendar [(ngModel)]="toDate" dateFormat="dd/mm/yy" showIcon></p-calendar>
+    </div>
+
+    <div class="col-6 col-md-auto">
+      <select class="form-select" [(ngModel)]="selectedFirm">
+        <option value="all">ALL FIRMS</option>
+        <option *ngFor="let firm of firms" [value]="firm">{{ firm }}</option>
+      </select>
+    </div>
+
+    <div class="col-6 col-md-auto">
+      <select class="form-select" [(ngModel)]="selectedUser">
+        <option value="all">ALL USERS</option>
+        <option *ngFor="let user of users" [value]="user">{{ user }}</option>
+      </select>
+    </div>
+
+    <div class="col-12 col-md-auto ms-md-auto">
+      <button class="btn btn-outline-dark w-100">
+        <i class="pi pi-file-excel"></i> Excel Report
+      </button>
+    </div>
+  </div>
+
+  
+  <div class="row mt-3">
+    <div class="col-12 col-sm-6 col-md-4">
+      <select class="form-select" [(ngModel)]="transactionType">
+        <option>All Transaction</option>
+        <option>Sale</option>
+        <option>Purchase</option>
+      </select>
+    </div>
+  </div>
+
+  
+  <div class="row mt-3">
+    <div class="col-12 col-sm-6 col-md-4">
+      <input type="text" class="form-control mb-2" placeholder="Search" [(ngModel)]="searchText">
+    </div>
+  </div>
+
+  <div class="table-responsive mt-3">
+    <table class="table table-bordered table-hover">
+      <thead class="table-light text-nowrap">
+        <tr>
+          <th>#</th>
+          <th>DATE</th>
+          <th>REF NO.</th>
+          <th>PARTY NAME</th>
+          <th>CATEGORY</th>
+          <th>TYPE</th>
+          <th>TOTAL</th>
+          <th>RECEIVED</th>
+          <th>BALANCE</th>
+          <th>PRINT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="transactions.length === 0">
+          <td colspan="10" class="text-center text-muted py-4">
+            <img src="assets/no-data.svg" width="50" class="mb-2"><br>
+            No data is available for {{ transactionType }}.<br>
+            Please try again after making relevant changes.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div> -->

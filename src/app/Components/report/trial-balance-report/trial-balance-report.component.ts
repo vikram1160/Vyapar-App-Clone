@@ -59,7 +59,7 @@ export class TrialBalanceReportComponent {
     }
   });
 
-  // Save the file
+  
   doc.save('trial-balance-report.pdf');
 }
 

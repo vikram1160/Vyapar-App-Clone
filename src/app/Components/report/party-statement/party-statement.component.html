@@ -1,0 +1,54 @@
+<div class="main-div">
+
+    <div class="filter-section">
+  <div class="date-range">
+    <label>This Month</label>
+    <input type="date" [(ngModel)]="fromDate" />
+    <span>To</span>
+    <input type="date" [(ngModel)]="toDate" />
+  </div>
+
+  <div class="party-select">
+    <input type="text" placeholder="Select Party" />
+  </div>
+
+  <div class="view-options">
+    <label>View:</label>
+    <label><input type="radio" name="view" checked /> Vyapar</label>
+    <label><input type="radio" name="view" /> Accounting</label>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-outline-secondary">Excel Report</button>
+    <button class="btn btn-outline-secondary">Print</button>
+  </div>
+</div>
+
+<div class="table-section" *ngIf="transactions.length === 0">
+  <p class="no-data">No transactions to show</p>
+</div>
+
+<div class="summary-section">
+  <h4>Party Statement Summary</h4>
+  <div class="summary-grid">
+    <div>
+      <p>Total Sale: ₹ 0.00000</p>
+      <small>(Sale - Sale Return)</small>
+    </div>
+    <div>
+      <p>Total Purchase: ₹ 0.00000</p>
+      <small>(Purchase - Purchase Return)</small>
+    </div>
+    <div><p>Total Expense: ₹ 0.00000</p></div>
+    <div><p>Total Money-In: ₹ 0.00000</p></div>
+    <div><p>Total Money-out: ₹ 0.00000</p></div>
+    <div class="receivable">
+      <p>Total Receivable</p>
+      <h4>₹ 0.00000</h4>
+    </div>
+  </div>
+</div>
+
+
+
+</div>

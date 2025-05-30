@@ -3,6 +3,8 @@
     padding: 20px;
   }
   .card{
-    margin-right: 100px;
+    margin-right: 10%;
+    width: 20%;
+    height: 10% !important;
   }
   

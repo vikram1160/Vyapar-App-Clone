@@ -1,9 +1,13 @@
-<nav class="nav flex-column border border-dark" style="width: 250px; height: 100%; background-color: rgb(39, 34, 53); ">
-  <a class="nav-link active" routerLink="" (click)="hideReports()"> <i class="pi pi-home" style="font-size: 1rem"></i>
-    Home </a>
+<!-- <button class="toggle-btn" (click)="toggleSidebar()">
+  <i [class]="isCollapsed ? 'pi pi-chevron-right' : 'pi pi-chevron-left'"></i>
+</button> -->
 
+
+<nav class="nav flex-column border border-dark" style="width: 250px; height: 100%; background-color: rgb(39, 34, 53); ">
+  <a class="nav-link active" *ngIf="!isCollapsed"   routerLink="" (click)="hideReports()"> <i class="pi pi-home" style="font-size: 1rem"></i>
+    Home </a>
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" (click)="hideReports()">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  *ngIf="!isCollapsed" (click)="hideReports()">
       <i class="pi pi-users" style="font-size: 1rem"></i> Parties
     </a>
     <ul class="dropdown-menu">
@@ -43,7 +47,6 @@
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" routerLink="purchase-bills" (click)="hideReports()">Purchase Bills</a></li>
       <li><a class="dropdown-item" routerLink="payment-out" (click)="hideReports()">Payment Out</a></li>
-      <li><a class="dropdown-item" routerLink="  " (click)="hideReports()">Purchase Order</a></li>
     </ul>
   </li>
 
@@ -82,7 +85,6 @@
     </a>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" routerLink="share" (click)="hideReports()">Sync & Share</a></li>
-      <li><a class="dropdown-item" routerLink="" (click)="hideReports()">Auto Backup</a></li>
     </ul>
   </li>
 
@@ -117,7 +119,7 @@
 
 
 
-  <div *ngIf="showReports" class="dropdown-menus show ">
+  <div *ngIf="showReports" class="dropdown-menus show">
     <app-reports></app-reports>
   </div>
 

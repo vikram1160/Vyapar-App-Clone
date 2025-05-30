@@ -2,13 +2,16 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart'
 import { DropdownModule } from 'primeng/dropdown';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ChartModule,FormsModule,DropdownModule,],
+  imports: [ChartModule,FormsModule, CommonModule,DropdownModule,],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -16,9 +19,11 @@ export class HomeComponent {
   data: any;
   options: any;
   formatted: any
- 
 
-  constructor() {
+
+
+
+  constructor( private router: Router ) {
     const today = new Date();
     const daysToShow = 12;
     const labels: string[] = [];
@@ -78,5 +83,41 @@ export class HomeComponent {
   getRandomRevenue(): number {
     return Math.floor(Math.random() * 2000);
   }
+
+  //   showReports = false;
+  // showOther = false;
+
+  // goReport() {
+  //   this.showReports = true;
+  //   this.showOther = true;
+   
+  // }
+
+ 
+
+    goReport(){
+
+     this.router.navigate(['/reports/sale']);
+
+      // this.router.navigate(['/reports/sale', 'go-report']);
+    }
+
+    goTransction(){
+      this.router.navigate(['reports/all-transactions']);
+
+    }
+    goBookDayReport(){
+      this.router.navigate(['reports/daybook']); 
+    }
+    goPartyStatement(){
+      this.router.navigate(['reports/party-statement']);
+    }
+      
+
+
+    
+
+ 
+
 
 }

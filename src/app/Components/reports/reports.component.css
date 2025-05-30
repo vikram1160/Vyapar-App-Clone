@@ -86,4 +86,13 @@
   color: #e91e63;
 }
 
+     @media screen and (min-width:1290px) {
+  .sidebar {
+     margin-left: 251px;
+    margin-top: -590px;
+    width: 175px;
+    position:fixed !important;
+  }
+     }
+
   

@@ -1,131 +1,150 @@
-.row{
-    margin-top: 10px;
-    margin-left: 10px;
-   /* height: 100%; */
-}
-.main{
-    display: flex;
-}
-.AMOUNT{
-    margin-left: 100px;
-    margin-top: 11px;
-}
-.PARTY{
-    margin-left: 10px;
-    margin-top: 11px;
-}
-.TRANSACATIONS-ROW{
-    margin-top:50px; 
-    margin-left: 20px;
-}
-.add-party{
-    /* border: 1px solid black; */
-    height: 100% !important;
-    width: 26%;
-    border-radius: 10px;
-    /* overflow: auto; */
+.row {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 100%;
 }
 
-.add-party-btn{
-    margin-top: 14px;
-    margin-left: 50px;
-    border-radius: 50px;
+.main {
+  display: flex;
+  /* height: 100vh; */
 }
-.add-party-btn:hover{
-    background-color:lightblue
+
+.AMOUNT {
+  margin-left: 100px;
+  margin-top: 11px;
 }
-.pi-ellipsis-v{
-margin-left: 30px;
+
+.PARTY {
+  margin-left: 10px;
+  margin-top: 11px;
 }
-.pi-search{
-    margin-left: 10px;
+
+.TRANSACATIONS-ROW {
+  margin-top: 50px;
+  margin-left: 20px;
 }
-i{
-    cursor: pointer;
+
+.add-party {
+  border: 1px solid #000000;
+  height: 75vh !important;
+  width: 26%;
+  border-radius: 10px;
 }
-label  {
-    cursor: pointer;
-    
+
+.add-party-btn {
+  margin-top: 14px;
+  margin-left: 50px;
+  border-radius: 50px;
 }
-label:hover{
-    background-color: #ebecec;
+
+.add-party-btn:hover {
+  background-color: lightblue
 }
-.col-9{
-    /* border: 1px solid black; */
-    /* border-radius: 12px; */
-    height: 100%;
-    width: 74%;
-    
+
+.pi-ellipsis-v {
+  margin-left: 30px;
 }
-/* .party-details{
-    overflow-x: hidden;
-    background-color: lightgray;
-} */
+
+.pi-search {
+  margin-left: 10px;
+}
+
+i {
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+
+}
+
+label:hover {
+  background-color: #ebecec;
+}
+
+.col-9 {
+  border: 1px solid black;
+  border-radius: 12px;
+  height: 100%;
+  width: 74%;
+
+}
+
 
 .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-  }
-  input:checked + .slider {
-    background-color: #2196F3;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 19px;
-    width: 19px;
-    left: 4px;
-    bottom: 2px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  } 
-  .save-change{
-    margin-left: 450px;
-  }
-  button:hover{
-    background-color: #008cff !important;
-    color: white;
-  }
-  .icon{
-    margin-left: -10px;
-  }
-  .pi-envelope{
-    margin: 0px 20px;
-  }
-  .pi-whatsapp{
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.save-change {
+  margin-left: 450px;
+}
+
+button:hover {
+  background-color: #008cff !important;
+  color: white;
+}
+
+.icon {
+  margin-left: -10px;
+}
+
+.pi-envelope {
   margin: 0px 20px;
-  }
-  .pi-clock{
+}
+
+.pi-whatsapp {
   margin: 0px 20px;
-  }
+}
+
+.pi-clock {
+  margin: 0px 20px;
+}

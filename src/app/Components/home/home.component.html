@@ -17,29 +17,21 @@
   <div class="sales">
     <h4>Total Sale</h4>
     <h2>₹ 1000</h2>
-    <p-chart type="line" [data]="data" [options]="options" style="height: 300px;"></p-chart>
+    <p-chart type="line" [data]="data" [options]="options" style="height: 300px;"></p-chart> 
   </div>
 
   <div class="reports">
     <h4>Most Used Reports</h4>
     <br />
-    <div class="report-list">
-      <button pButton label="Sale Report" icon="pi pi-chevron-right">
-        Sale Report <samp><i class="pi pi-angle-right"></i></samp>
-      </button>
-      <button pButton label="All Transactions" icon="pi pi-chevron-right">
-        All Transactions <samp><i class="pi pi-angle-right"></i></samp>
-      </button>
-      <button pButton label="Daybook Report" icon="pi pi-chevron-right">
-        Daybook Report <samp><i class="pi pi-angle-right"></i></samp>
-      </button>
-      <button pButton label="Party Statement" icon="pi pi-chevron-right">
-        Party Statement <samp><i class="pi pi-angle-right"></i></samp>
-      </button>
+    <div class="main-btn">
+      <button class="btn" (click)="goReport()"> sale Report <samp><i class="pi pi-angle-right"></i></samp></button>
+      <button class="btn"  (click)="goTransction()"> All Transactions <samp><i class="pi pi-angle-right"></i></samp> </button>
+      <button class="btn" (click)="goBookDayReport()" > Daybook Report <samp><i class="pi pi-angle-right"></i></samp> </button>
+      <button class="btn"  (click)="goPartyStatement()" > Party Statement <samp><i class="pi pi-angle-right"></i></samp> </button>
     </div>
-  </div>
-</div>
 
+    <!-- <app-reports *ngIf="showReports"></app-reports>
+    <app-sale *ngIf="showOther"></app-sale> -->
   
 
-
+  </div>

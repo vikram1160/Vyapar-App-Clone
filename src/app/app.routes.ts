@@ -28,9 +28,12 @@ import { AllPartiesComponent } from './Components/report/all-parties/all-parties
 import { StockSummaryComponent } from './Components/report/stock-summary/stock-summary.component';
 import { SaleComponent } from './Components/Sale/sale/sale.component';
 import { CashInHandComponent } from './Components/Cash-&-Bank/cash-in-hand/cash-in-hand.component';
+import { PartyStatementComponent } from './Components/report/party-statement/party-statement.component';
+// import { LoginComponent } from './Components/login/login.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
+    // {path:'login',component:LoginComponent},
     { path: 'home', component: HomeComponent },
     { path: 'party-details', component: PartyDetailsComponent },
     { path: 'smart-connect', component: SmartConnectComponent },
@@ -47,7 +50,7 @@ export const routes: Routes = [
     { path: 'Whatsapp', component: WhatsappMarketingComponent },
     { path: 'bank-ac', component: BankAccountComponent },
     { path: 'plans', component: PlansComponent },
-    { path: 'reports/sale', component: SaleComponent},
+    { path: 'reports/sale', component: SaleComponent },
     { path: 'share', component: SyncShareComponent },
     { path: 'userActivity', component: UserActivityTableComponent },
     { path: 'sale-order', component: SaleOrderComponent },
@@ -60,7 +63,9 @@ export const routes: Routes = [
     { path: 'reports/allparties', component: AllPartiesComponent },
     { path: 'reports/stock-summary', component: StockSummaryComponent },
     { path: 'cash-in-hand', component: CashInHandComponent },
-    
+    { path: 'go-report', component: ReportsComponent },
+    { path: 'reports/party-statement', component: PartyStatementComponent}
+
 
 
 

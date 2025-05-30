@@ -3,3 +3,17 @@
   height: 100%;
   overflow: hidden !important;
 }
+
+.p-tablist-tab-list{
+  display: flex;
+  justify-content: space-around !important;
+  border: none !important;
+  border-top: none !important;
+
+}
+
+
+.custom-width-button {
+  width: 500px !important;
+}
+

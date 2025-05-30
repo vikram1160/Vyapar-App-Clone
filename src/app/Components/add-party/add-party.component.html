@@ -47,11 +47,6 @@
             <textarea id="billingAddress" pInputTextarea formControlName="billingAddress"></textarea>
           </div>
   
-          
-          <div class="col-12">
-            <a href="#" (click)="toggleShipping()">+ Enable Shipping Address</a>
-          </div>
-  
           <div class="col-12" *ngIf="showShipping">
             <label for="shippingAddress">Shipping Address</label>
             <textarea id="shippingAddress" pInputTextarea formControlName="shippingAddress"></textarea>

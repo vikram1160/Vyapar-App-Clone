@@ -1,0 +1,13 @@
+.login-wrapper {
+  /* background: linear-gradient(135deg, #007bff, #6c63ff); */
+  background-image: url('../../../assets/images\ \(1\).jpg') ;
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.login-box {
+  background-color: #fff;
+  border-radius: 12px;
+}
